@@ -87,9 +87,9 @@ export class DashboardComponent implements OnInit {
       // Jika sudah, dapatkan username dari storage
       this.username = sessionStorage.getItem('username');
       // Set session timeout to 5 minutes (adjust as needed)
-      this.sessionTimeOut = setTimeout(() => {
-        this.logout();
-      }, 5 * 60 * 1000); // 5 minutes in milliseconds
+      // this.sessionTimeOut = setTimeout(() => {
+      //   this.logout();
+      // }, 5 * 60 * 1000); // 5 minutes in milliseconds
     }
   }
 

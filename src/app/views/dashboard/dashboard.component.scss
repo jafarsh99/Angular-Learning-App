@@ -93,3 +93,22 @@ body {
 li {
   list-style-type: disclosure-closed;
 }
+
+.btn-nav {
+  min-width: 100px;
+  background-color: grey;
+  border-radius: 8px;
+  border: none;
+  padding: 5px;
+  color: azure;
+  margin-right: 10px;
+}
+
+.btn-nav:hover {
+  background-color: rgb(168, 168, 168);
+}
+
+
+.button-nav{
+  margin-bottom: 10px;
+}

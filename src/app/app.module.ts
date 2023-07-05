@@ -39,6 +39,7 @@ import {
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { CarouselModule } from '@coreui/angular';
 import { ModalModule } from '@coreui/angular';
+import { TableComponent } from './views/table/table.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -47,7 +48,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS],
+  declarations: [AppComponent, ...APP_CONTAINERS, TableComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
