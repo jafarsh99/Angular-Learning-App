@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { navItems } from './_nav';
+import { BtnNavComponent } from 'src/app/views/btn-nav/btn-nav.component';
 
 @Component({
   selector: 'app-dashboard',

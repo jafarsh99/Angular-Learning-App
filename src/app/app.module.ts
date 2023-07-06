@@ -84,6 +84,9 @@ const APP_CONTAINERS = [
     FormsModule,
     TableModule,
   ],
+  exports:[
+    BtnNavComponent,
+  ],
   providers: [
     {
       provide: LocationStrategy,
