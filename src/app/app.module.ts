@@ -33,13 +33,16 @@ import {
   SharedModule,
   SidebarModule,
   TabsModule,
-  UtilitiesModule
+  UtilitiesModule,
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { CarouselModule } from '@coreui/angular';
 import { ModalModule } from '@coreui/angular';
 import { TableComponent } from './views/table/table.component';
+import { TableModule } from 'primeng/table';
+import { Routes } from '@angular/router';
+import { BtnNavComponent } from './views/btn-nav/btn-nav.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -48,7 +51,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, TableComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, TableComponent, BtnNavComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -79,6 +82,7 @@ const APP_CONTAINERS = [
     CarouselModule,
     ModalModule,
     FormsModule,
+    TableModule,
   ],
   providers: [
     {

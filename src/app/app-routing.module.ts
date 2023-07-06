@@ -7,6 +7,7 @@ import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { TableComponent } from './views/table/table.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,13 @@ const routes: Routes = [
       title: 'Home'
     },
     children: [
+      {
+        path: 'table',
+        component: TableComponent,
+        data: {
+            title: 'Table'
+        }
+    },
       {
         path: 'dashboard',
         loadChildren: () =>

@@ -151,4 +151,5 @@ export class DashboardComponent implements OnInit {
     // Redirect to the login page
     this.router.navigate(['/login']);
   }
+
 }
