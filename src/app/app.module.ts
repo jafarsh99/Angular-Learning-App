@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
-import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import {
+  HashLocationStrategy,
+  LocationStrategy,
+  PathLocationStrategy,
+} from '@angular/common';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,14 +17,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Import containers
-import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers';
+import {
+  DefaultFooterComponent,
+  DefaultHeaderComponent,
+  DefaultLayoutComponent,
+} from './containers';
 
 import {
   AvatarModule,
   BadgeModule,
   BreadcrumbModule,
   ButtonGroupModule,
-  ButtonModule,
   CardModule,
   DropdownModule,
   FooterModule,
@@ -43,15 +50,26 @@ import { TableComponent } from './views/table/table.component';
 import { TableModule } from 'primeng/table';
 import { Routes } from '@angular/router';
 import { BtnNavComponent } from './views/btn-nav/btn-nav.component';
+import { AccordionModule } from 'primeng/accordion';
+import { ButtonModule } from 'primeng/button';
+import { AccordionComponent } from './views/accordion/accordion.component';
+import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
   DefaultHeaderComponent,
-  DefaultLayoutComponent
+  DefaultLayoutComponent,
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, TableComponent, BtnNavComponent],
+  declarations: [
+    AppComponent,
+    ...APP_CONTAINERS,
+    TableComponent,
+    AccordionComponent,
+    BtnNavComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -83,19 +101,20 @@ const APP_CONTAINERS = [
     ModalModule,
     FormsModule,
     TableModule,
+    AccordionModule,
+    ButtonModule,
+    ConfirmDialogModule
   ],
-  exports:[
-    BtnNavComponent,
-  ],
+  exports: [BtnNavComponent],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy
+      useClass: HashLocationStrategy,
     },
     IconSetService,
-    Title
+    Title,
+    ConfirmationService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

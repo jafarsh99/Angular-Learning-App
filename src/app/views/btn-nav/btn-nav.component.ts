@@ -22,4 +22,8 @@ export class BtnNavComponent {
     goToDashboard(){
       this.router.navigate(['dashboard']);
     }
+
+    goToAccordion(){
+      this.router.navigate(['accordion']);
+    }
 }

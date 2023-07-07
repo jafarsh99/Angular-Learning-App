@@ -1,0 +1,30 @@
+<body>
+  <div class="accordion-wrapper">
+    <p-accordion [multiple]="true" >
+      <p-accordionTab
+        *ngFor="let item of accordionItems; let i = index"
+        [header]="item.header"
+      >
+        {{ item.content }}
+        <button
+          pButton
+          type="button"
+          label="Hapus"
+          (click)="confirmRemoveItem(i)"
+          class="p-button-danger btn-hapus"
+        ></button>
+      </p-accordionTab>
+    </p-accordion>
+
+    <button
+      pButton
+      type="button"
+      label="Tambah Item"
+      (click)="addAccordionItem()"
+      class="p-button-success"
+    ></button>
+  </div>
+</body>
+
+
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
