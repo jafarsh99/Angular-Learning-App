@@ -1,6 +1,7 @@
 <body>
   <div>
     <h3>TABEL DARI PRIME</h3>
+    <p-button (click)="showDialog()" label="Tambah Data"></p-button>
   </div>
   <div class="table-wrapper">
     <p-table
@@ -18,6 +19,7 @@
           <th>ID</th>
           <th>Name</th>
           <th>Age</th>
+          <th class="action-row">Action</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData>
@@ -25,8 +27,63 @@
           <td>{{ rowData.id }}</td>
           <td>{{ rowData.name }}</td>
           <td>{{ rowData.age }}</td>
+          <td class="action-row">
+            <button pButton (click)="editData(rowData)">
+              <svg cIcon name="cilPencil" size="sm"></svg>
+            </button>
+            &nbsp;
+            <button
+              pButton
+              class="p-button-danger"
+              (click)="deleteData(rowData)"
+            >
+              <svg cIcon name="cilTrash" size="sm"></svg>
+            </button>
+          </td>
         </tr>
       </ng-template>
     </p-table>
   </div>
 </body>
+
+<p-dialog
+  header="Add New Data"
+  [(visible)]="visible"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <div class="dialog-wrapper">
+    <div class="row">
+      <div class="col">
+        <h6>ID :</h6>
+        <h6>Name :</h6>
+        <h6>Age :</h6>
+      </div>
+      <div class="col">
+        <input
+          type="number"
+          [(ngModel)]="newData.id"
+          placeholder="Id"
+          required
+        />
+        <input
+          type="text"
+          [(ngModel)]="newData.name"
+          placeholder="Name"
+          required
+        />
+        <input
+          type="number"
+          [(ngModel)]="newData.age"
+          placeholder="Age"
+          required
+        />
+      </div>
+    </div>
+    <div>
+      <button pButton (click)="addData()">
+        Tambah Data <svg cIcon name="cilPencil" size="sm"></svg>
+      </button>
+    </div>
+  </div>
+</p-dialog>

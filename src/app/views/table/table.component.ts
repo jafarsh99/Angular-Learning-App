@@ -19,4 +19,33 @@ export class TableComponent {
       {id: 9, name: 'John Aust', age: 40},
       {id: 10, name: 'John Collar', age: 40},
     ];
+
+
+    newData: Data = { id: 0, name: '', age: 0 };
+    visible: boolean = false;
+
+  addData() {
+    if (this.newData.id === 0 || this.newData.name === '' || this.newData.age === 0) {
+      // Form kosong, tidak melakukan tambah data
+      return;
+    }
+    this.data.unshift(this.newData);
+    this.newData = { id: 0, name: '', age: 0 };
+  }
+
+  editData(item: Data) {
+    // Implement your edit logic here
+    console.log('Edit data:', item);
+  }
+
+  deleteData(item: Data) {
+    const index = this.data.indexOf(item);
+    if (index !== -1) {
+      this.data.splice(index, 1);
+    }
+  }
+
+  showDialog() {
+    this.visible = true;
+}
 }
