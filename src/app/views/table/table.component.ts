@@ -27,10 +27,12 @@ export class TableComponent {
   addData() {
     if (this.newData.id === 0 || this.newData.name === '' || this.newData.age === 0) {
       // Form kosong, tidak melakukan tambah data
+      this.visible = false;
       return;
     }
     this.data.unshift(this.newData);
     this.newData = { id: 0, name: '', age: 0 };
+    this.visible = false;
   }
 
   editData(item: Data) {

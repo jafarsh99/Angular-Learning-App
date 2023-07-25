@@ -56,6 +56,8 @@ import { AccordionComponent } from './views/accordion/accordion.component';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextModule } from 'primeng/inputtext';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -106,6 +108,8 @@ const APP_CONTAINERS = [
     ButtonModule,
     ConfirmDialogModule,
     DialogModule,
+    InputNumberModule,
+    InputTextModule,
   ],
   exports: [BtnNavComponent],
   providers: [

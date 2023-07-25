@@ -60,24 +60,22 @@
         <h6>Age :</h6>
       </div>
       <div class="col">
-        <input
+        <p-inputNumber
           type="number"
           [(ngModel)]="newData.id"
           placeholder="Id"
-          required
-        />
+        ></p-inputNumber>
         <input
+          pInputText
           type="text"
           [(ngModel)]="newData.name"
           placeholder="Name"
-          required
         />
-        <input
+        <p-inputNumber
           type="number"
           [(ngModel)]="newData.age"
           placeholder="Age"
-          required
-        />
+        ></p-inputNumber>
       </div>
     </div>
     <div>
