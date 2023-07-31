@@ -9,10 +9,37 @@ body {
 .action-row{
     text-align: center !important;
     padding: 0%;
-    // display: flex !important;
-    // max-width: 150px;
+    display: flex;
+    place-content: center;
+}
+
+td, th{
+    text-align: center !important;
 }
 
 .dialog-wrapper{
     padding: 20px;
+}
+
+.tbBody{
+    
+}
+
+.row h6{
+    width: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input{
+    width: auto;
+}
+
+button{
+    float: right;
 }

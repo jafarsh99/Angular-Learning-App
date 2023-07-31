@@ -23,7 +23,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData>
-        <tr>
+        <tr class="tbBody">
           <td>{{ rowData.id }}</td>
           <td>{{ rowData.name }}</td>
           <td>{{ rowData.age }}</td>
@@ -51,35 +51,48 @@
   [(visible)]="visible"
   [draggable]="false"
   [resizable]="false"
+  [style]="{ width: '30vw', height: '400px' }"
 >
   <div class="dialog-wrapper">
     <div class="row">
       <div class="col">
         <h6>ID :</h6>
+      </div>
+      <div class="col">
+        <p-inputNumber
+          type="number"
+          [(ngModel)]="selectedRowData ? selectedRowData.id : newData.id"
+          placeholder="Id"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <h6>Name :</h6>
+      </div>
+      <div class="col">
+        <input
+          pInputText
+          type="text"
+          [(ngModel)]="selectedRowData ? selectedRowData.name : newData.name"
+          placeholder="Name"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <h6>Age :</h6>
       </div>
       <div class="col">
         <p-inputNumber
           type="number"
-          [(ngModel)]="newData.id"
-          placeholder="Id"
-        ></p-inputNumber>
-        <input
-          pInputText
-          type="text"
-          [(ngModel)]="newData.name"
-          placeholder="Name"
-        />
-        <p-inputNumber
-          type="number"
-          [(ngModel)]="newData.age"
+          [(ngModel)]="selectedRowData ? selectedRowData.age : newData.age"
           placeholder="Age"
         ></p-inputNumber>
       </div>
     </div>
     <div>
-      <button pButton (click)="addData()">
+      <button pButton (click)="saveData()">
         Tambah Data <svg cIcon name="cilPencil" size="sm"></svg>
       </button>
     </div>
