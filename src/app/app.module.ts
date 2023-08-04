@@ -58,6 +58,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { DarkmodeComponent } from './views/darkmode/darkmode.component';
+import { SelectButtonModule } from 'primeng/selectbutton';
+
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -72,6 +76,7 @@ const APP_CONTAINERS = [
     TableComponent,
     AccordionComponent,
     BtnNavComponent,
+    DarkmodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,6 +115,8 @@ const APP_CONTAINERS = [
     DialogModule,
     InputNumberModule,
     InputTextModule,
+    RadioButtonModule,
+    SelectButtonModule,
   ],
   exports: [BtnNavComponent],
   providers: [

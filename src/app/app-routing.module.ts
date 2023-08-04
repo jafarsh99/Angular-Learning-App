@@ -9,6 +9,7 @@ import { RegisterComponent } from './views/pages/register/register.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { TableComponent } from './views/table/table.component';
 import { AccordionComponent } from './views/accordion/accordion.component';
+import { DarkmodeComponent } from './views/darkmode/darkmode.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,13 @@ const routes: Routes = [
         component: AccordionComponent,
         data: {
           title: 'Accordion',
+        },
+      },
+      {
+        path: 'darkmode',
+        component: DarkmodeComponent,
+        data: {
+          title: 'Darkmode',
         },
       },
       {

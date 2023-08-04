@@ -26,4 +26,8 @@ export class BtnNavComponent {
     goToAccordion(){
       this.router.navigate(['accordion']);
     }
+
+    goToDarkmode(){
+      this.router.navigate(['darkmode']);
+    }
 }

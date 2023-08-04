@@ -1,18 +1,38 @@
 <body>
   <div class="accordion-wrapper">
-    <p-accordion [multiple]="true" >
+    <p-accordion [multiple]="true">
       <p-accordionTab
         *ngFor="let item of accordionItems; let i = index"
         [header]="item.header"
       >
-        {{ item.content }}
-        <button
-          pButton
-          type="button"
-          label="Hapus"
-          (click)="confirmRemoveItem(i)"
-          class="p-button-danger btn-hapus"
-        ></button>
+        <div>
+          <div>
+            <p-radioButton
+              [inputId]="'accItem_' + i + '_option1'"
+              [name]="'accItemRadio' + i"
+              [(ngModel)]="item.selectedOption"
+              [value]="1"
+            ></p-radioButton> &nbsp;
+            <label for="'accItem_' + i + '_option1'">Option 1</label>
+          </div>
+          <div>
+            <p-radioButton
+              [inputId]="'accItem_' + i + '_option2'"
+              [name]="'accItemRadio' + i"
+              [(ngModel)]="item.selectedOption"
+              [value]="2"
+            ></p-radioButton> &nbsp;
+            <label for="'accItem_' + i + '_option2'">Option 2</label>
+          </div>
+          {{ item.content }}
+          <button
+            pButton
+            type="button"
+            label="Hapus"
+            (click)="confirmRemoveItem(i)"
+            class="p-button-danger btn-hapus"
+          ></button>
+        </div>
       </p-accordionTab>
     </p-accordion>
 
@@ -26,5 +46,4 @@
   </div>
 </body>
 
-
-<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>

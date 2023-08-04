@@ -9,6 +9,8 @@ import { ConfirmationService } from 'primeng/api';
 export class AccordionComponent implements OnInit{
 
   accordionItems: any[] = [];
+  selectedAccordionIndex: number | null = null;
+
 
   constructor(
     private confirmationService : ConfirmationService,
@@ -20,7 +22,8 @@ export class AccordionComponent implements OnInit{
     
     const initialItem = {
       header: 'Accordion Item #' + (this.accordionItems.length + 1),
-      content: 'This is the content of Accordion Item #' + (this.accordionItems.length + 1)
+      content: 'This is the content of Accordion Item #' + (this.accordionItems.length + 1),
+      selected: false
     };
     this.accordionItems.push(initialItem);
   }
@@ -28,9 +31,11 @@ export class AccordionComponent implements OnInit{
   addAccordionItem() {
     const newItem = {
       header: 'Accordion Item #' + (this.accordionItems.length + 1),
-      content: 'This is the content of Accordion Item #' + (this.accordionItems.length + 1)
+      content: 'This is the content of Accordion Item #' + (this.accordionItems.length + 1),
     };
     this.accordionItems.push(newItem);
+
+    this.selectedAccordionIndex = this.accordionItems.length - 1;
   }
 
   confirmRemoveItem(i: number) {
@@ -44,5 +49,9 @@ export class AccordionComponent implements OnInit{
 
   removeAccordionItem(index: number) {
   this.accordionItems.splice(index, 1);
+
+  if (this.selectedAccordionIndex === index) {
+    this.selectedAccordionIndex = null;
+  }
   }
 }
