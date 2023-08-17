@@ -25,6 +25,38 @@ export class TableComponent {
   selectedRowData: Data | null = null;
 
   visible: boolean = false;
+  selectedListTabelData: Data[] = [];
+  actionValue: any;
+  selectedRows: any[] = [];
+
+  isSelected(data: any): boolean {
+    return this.selectedRows.some(row => row.id === data.id);
+  }
+
+  onRowSelect(event: any) {
+    if (!this.isSelected(event.data)) {
+      this.selectedRows.push(event.data);
+    }
+    console.log('Row selected:', event.data);
+    console.log("DATA DIPILIH: " + JSON.stringify(this.selectedRows));
+
+  }
+
+  onRowUnselect(event: any) {
+    this.selectedRows = this.selectedRows.filter(row => row.id !== event.data.id);
+    console.log('Row unselected:', event.data);
+    console.log("DATA DIPILIH: " + JSON.stringify(this.selectedRows));
+  }
+
+  onHeaderCheckboxToggle(event: any) {
+    if (event.checked) {
+      this.selectedRows = this.data.slice();
+    } else {
+      this.selectedRows = [];
+    }
+    console.log('Header checkbox toggled:', event.checked);
+    console.log("DATA DIPILIH: " + JSON.stringify(this.selectedRows));
+  }
 
   saveData() {
     console.log("SAVE DATA");

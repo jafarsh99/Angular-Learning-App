@@ -12,6 +12,10 @@
       [showCurrentPageReport]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       [rowsPerPageOptions]="[5, 7, 10]"
+      [(selection)]="selectedRows"
+      (onRowSelect)="onRowSelect($event)"
+      (onRowUnselect)="onRowUnselect($event)"
+      (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"
     >
       <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
       <ng-template pTemplate="header">
@@ -20,6 +24,8 @@
           <th>Name</th>
           <th>Age</th>
           <th class="action-row">Action</th>
+          <th><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
+          
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData>
@@ -39,6 +45,9 @@
             >
               <svg cIcon name="cilTrash" size="sm"></svg>
             </button>
+          </td>
+          <td>
+            <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
           </td>
         </tr>
       </ng-template>
