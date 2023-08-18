@@ -3,6 +3,7 @@
     <h1>LEARNING APP</h1>
   </div>
   <div class="carousel">
+    <button (click)="scrollToElement()">Scroll to Element</button>
     <c-carousel [interval]="0">
       <c-carousel-inner>
         <c-carousel-item *ngFor="let slide of slides">
@@ -98,7 +99,7 @@
     </div>
   </div>
 
-  <div class="example-modal">
+  <div class="example-modal" #targetElement>
     <h3>MODAL FROM COREUI</h3>
     <button class="primary" (click)="toggleLiveDemo()" >Launch demo modal</button>
     

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -29,6 +29,10 @@ interface IUser {
   styleUrls: ['dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+
+  @ViewChild('targetElement', { static: true }) targetElement!: ElementRef;
+
+
   slides: any[] = new Array(3).fill({
     id: -1,
     src: '',
@@ -49,7 +53,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private chartsData: DashboardChartsData,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
@@ -74,6 +79,11 @@ export class DashboardComponent implements OnInit {
     this.addItem(); // Add an initial item
 
     this.cekLogin();
+  }
+
+  scrollToElement() {
+    this.renderer.setProperty(this.targetElement.nativeElement, 'scrollTop', 0);
+    this.targetElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   cekLogin() {
