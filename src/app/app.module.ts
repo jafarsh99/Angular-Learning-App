@@ -29,7 +29,6 @@ import {
   BreadcrumbModule,
   ButtonGroupModule,
   CardModule,
-  DropdownModule,
   FooterModule,
   FormModule,
   GridModule,
@@ -61,7 +60,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { DarkmodeComponent } from './views/darkmode/darkmode.component';
 import { SelectButtonModule } from 'primeng/selectbutton';
-
+import { InputCustomComponent } from './views/input-custom/input-custom.component';
+import {DropdownModule} from 'primeng/dropdown';
+import {PanelModule} from 'primeng/panel';
+import {FieldsetModule} from 'primeng/fieldset';
+import {CalendarModule} from 'primeng/calendar';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -77,6 +80,7 @@ const APP_CONTAINERS = [
     AccordionComponent,
     BtnNavComponent,
     DarkmodeComponent,
+    InputCustomComponent,
   ],
   imports: [
     BrowserModule,
@@ -117,6 +121,10 @@ const APP_CONTAINERS = [
     InputTextModule,
     RadioButtonModule,
     SelectButtonModule,
+    DropdownModule,
+    PanelModule,
+    FieldsetModule,
+    CalendarModule,
   ],
   exports: [BtnNavComponent],
   providers: [

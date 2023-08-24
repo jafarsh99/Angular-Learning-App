@@ -1,0 +1,190 @@
+<body>
+  <div class="input-wrapper">
+    <div>
+      <h2>Custom Prime</h2>
+      <label>Label</label>
+    </div>
+    <p-panel header="Contoh Panel Kustom">
+      <div style="margin-bottom: 10px">
+        <input type="text" pInputText [(ngModel)]="value" /> &nbsp;
+        <p-button
+          class="ui-button"
+          label="Prime 14"
+          icon="pi pi-search"
+        ></p-button>
+        <p-button
+          class="ui-button-primary"
+          label="Prime 14"
+          icon="pi pi-search"
+        ></p-button>
+        <p-button
+          class="ui-button-text"
+          label="Prime 14"
+          icon="pi pi-search"
+        ></p-button>
+      </div>
+      <div style="margin-bottom: 10px">
+        <button pButton type="button" icon="pi pi-check" class="p-button-text">
+          Cari
+        </button>
+        <input
+          pInputText
+          type="text"
+          class="p-inputtext-sm"
+          [disabled]="true"
+        />
+        &nbsp;
+        <p-button
+          class="ui-button ui-button-primary ui-button-text"
+          label="Prime 14"
+          [disabled]="true"
+        ></p-button>
+      </div>
+      <div style="margin-bottom: 10px">
+        <input pInputText type="text" class="p-inputtext-sm" /> &nbsp;
+        <button
+          pButton
+          type="button"
+          label="Cari"
+          icon="pi pi-search"
+          class="input-button-right"
+        ></button>
+        <button
+          pButton
+          type="button"
+          label="Refresh"
+          icon="pi pi-refresh"
+          class="input-button-right"
+        ></button>
+      </div>
+      <div style="margin-bottom: 10px">
+        <p-dropdown optionLabel="name"></p-dropdown>
+      </div>
+      <div style="margin-bottom: 10px">
+        <button
+          pButton
+          type="button"
+          label="Unduh"
+          icon="pi pi-print"
+          class="p-button-text"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Rekam"
+          icon="pi pi-plus"
+          class="p-button-text"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Ubah"
+          icon="pi pi-pencil"
+          class="p-button-text"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Simpan"
+          icon="pi pi-save"
+          class="p-button-text"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Batal"
+          icon="pi pi-times"
+          class="p-button-text"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Oke"
+          icon="pi pi-check"
+          class="p-button-text"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Keluar"
+          icon="pi pi-sign-out"
+          class="p-button-text"
+        ></button>
+      </div>
+      <div style="margin-bottom: 10px">
+        <button
+          pButton
+          type="button"
+          label="Unduh"
+          icon="pi pi-print"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Rekam"
+          icon="pi pi-plus"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Ubah"
+          icon="pi pi-pencil"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Simpan"
+          icon="pi pi-save"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Batal"
+          icon="pi pi-times"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Oke"
+          icon="pi pi-check"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Keluar"
+          icon="pi pi-sign-out"
+        ></button>
+      </div>
+      <div>
+        <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
+    </div>
+    <div>
+        <p-radioButton name="group1" value="0" label="Radio 1"></p-radioButton> &nbsp;
+        <p-radioButton name="group2" value="1" label="Radio 2" [disabled]="true"></p-radioButton> &nbsp;
+        <input type="radio"> Radio 3
+    </div>
+    </p-panel>
+    <p-fieldset legend="Fieldset">
+        <div>
+            <input pInputText type="text" class="p-inputtext-sm" /> &nbsp;
+        </div>
+        <div>
+          <button (click)="confirm()" pButton icon="pi pi-check" label="ConfDialog"></button>
+        </div>
+    </p-fieldset>
+  </div>
+</body>
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>

@@ -30,4 +30,7 @@ export class BtnNavComponent {
     goToDarkmode(){
       this.router.navigate(['darkmode']);
     }
+    goToCustomPrime(){
+      this.router.navigate(['custom-prime']);
+    }
 }

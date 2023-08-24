@@ -1,2 +1,372 @@
 // Here you can add other styles
 
+.p-inputtext {
+  font-size: 12px !important; /* Atur ukuran font sesuai keinginan */
+  //   padding: 5px !importan t; /* Sesuaikan padding sesuai kebutuhan */
+  border-radius: 4px !important;
+  padding: 5px 7px 5px 7px !important;
+}
+
+.p-inputtext:disabled {
+  background: #cacaca !important;
+  border: solid 1px #aeaeae !important;
+}
+
+.p-dropdown {
+  border-radius: 4px !important;
+  padding: 0px 5px 0px 5px !important;
+}
+
+.p-dropdown .p-dropdown-label {
+  font-size: 12px !important;
+  padding: 5px !important;
+  min-width: 100px !important;
+}
+
+.p-dropdown .p-dropdown-trigger {
+  font-size: 12px !important;
+  padding: 5px !important;
+  min-width: 20px !important;
+  line-height: normal !important; /* Set line-height to normal to avoid extra spacing */
+  justify-content: right !important;
+}
+.p-radiobutton .p-radiobutton-box.p-disabled {
+    background: #cacaca !important;
+    border: solid 1px #aeaeae !important;
+}
+
+.p-button {
+  border-radius: 4px !important;
+  padding: 5px !important;
+  font-size: 12px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  background-color: #007bff !important;
+  color: #fff !important;
+  font-weight: 0 !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+.p-button.p-button-text {
+  min-width: 80px !important;
+}
+
+.p-button .p-button-label {
+  font-weight: 400 !important;
+}
+
+.p-button .p-button-icon-left {
+  font-size: 10px !important;
+  //   margin-right: 0 !important;
+  //   margin-left: 7px !important;
+  font-weight: 900 !important;
+}
+
+.p-button:hover {
+  background-color: #0056b3 !important;
+}
+
+.p-button:focus,
+.p-button.focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+.p-button:active,
+.p-button.active {
+  background-color: #0056b3 !important;
+  border-color: #0056b3 !important;
+  box-shadow: none !important;
+}
+
+.p-button.disabled,
+.p-button:disabled {
+  pointer-events: none !important;
+  opacity: 0.65 !important;
+}
+
+.p-calendar-w-btn .p-datepicker-trigger {
+  border-radius: 0px 4px 4px 0px !important;
+}
+
+.p-calendar-w-btn .p-inputtext {
+  border-radius: 4px 0px 0px 4px !important;
+}
+
+thead, tbody, tfoot, tr, td, th {
+    padding: 0px !important;
+}
+
+.p-datepicker table th {
+    text-align: center !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year, .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    padding: 0px 10px 0px 10px !important;
+}
+
+.p-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+.p-table th,
+.p-table td {
+  padding: 0.5rem !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+.p-table th {
+  background-color: #d7d7d7 !important;
+  font-weight: bold !important;
+  text-align: left !important;
+}
+
+.p-table td {
+  background-color: #fff !important;
+}
+
+.p-table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.p-table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075) !important;
+}
+
+.p-table-bordered th,
+.p-table-bordered td {
+  border: 1px solid #dee2e6 !important;
+}
+
+.p-table-bordered {
+  border: 1px solid #dee2e6 !important;
+}
+
+.p-table-resizable {
+  table-layout: fixed !important;
+}
+
+.p-table-scrollable {
+  overflow: auto !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 5px !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  padding: 5px !important;
+  background: #cacaca !important;
+}
+
+label {
+  font-weight: 500 !important;
+}
+
+.p-checkbox.p-highlight .p-checkbox-box {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+/* Gaya untuk paginator */
+.p-paginator {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 20px !important;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+/* Gaya untuk tombol halaman */
+.p-paginator-page,
+.p-paginator-current {
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+  //   padding: 5px 10px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+  border-radius: 0 !important;
+  height: 40px !important;
+  min-width: auto;
+}
+
+.p-paginator .p-paginator-current {
+  background-color: transparent !important;
+  //   color: #6c757d !important;
+  color: transparent !important;
+  border: solid 0px white !important;
+  padding-top: 0px !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #007bff !important;
+  color: white !important;
+}
+.p-datatable .p-paginator-bottom {
+  padding-right: 200px;
+  border-radius: 0;
+}
+.p-paginator-page:hover,
+.p-paginator-current:hover {
+  background-color: #e9ecef !important;
+}
+
+/* Gaya untuk tombol halaman saat ini */
+.p-paginator-current {
+  background-color: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+}
+
+/* Gaya untuk tombol navigasi (first, prev, next, last) */
+.p-paginator-first,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-last {
+  height: 40px !important;
+  min-width: auto;
+  border-radius: 0 !important;
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+  padding: 5px 10px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+  margin: 0 !important;
+}
+
+.p-paginator-first {
+  border-radius: 4px 0px 0px 4px !important;
+}
+.p-paginator-last {
+  border-radius: 0px 4px 4px 0px !important;
+}
+
+/* Gaya saat mengarahkan kursor ke tombol navigasi */
+.p-paginator-first:hover,
+.p-paginator-prev:hover,
+.p-paginator-next:hover,
+.p-paginator-last:hover {
+  background-color: #e9ecef !important;
+}
+
+/* Gaya tombol navigasi aktif */
+.p-paginator-first.ui-state-disabled,
+.p-paginator-prev.ui-state-disabled,
+.p-paginator-next.ui-state-disabled,
+.p-paginator-last.ui-state-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  margin: 0 !important;
+}
+
+.p-paginator select {
+  font-size: 12px;
+  padding: 3px 6px;
+}
+.p-paginator .p-dropdown {
+  max-height: 30px !important;
+}
+.p-paginator .p-dropdown .p-dropdown-label {
+  padding-right: 0;
+  font-size: 12px !important;
+  max-width: 100px !important;
+  max-height: 30px !important;
+  position: absolute !important;
+}
+
+.p-panel .p-panel-header {
+  padding: 10px !important;
+  font-size: 18px !important;
+}
+
+/* Gaya untuk titik biru di tengah saat radio button diklik */
+.p-radiobutton .p-radiobutton-box.p-highlight {
+  background-color: #ffff !important; /* Warna titik biru */
+}
+
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+  background-color: #007bff !important;
+}
+
+.p-radiobutton-box.p-highlight .p-radiobutton-icon {
+    margin-bottom: 1px;
+}
+
+.p-button:disabled {
+  background: #cacaca !important;
+  border: solid 1px #aeaeae !important;
+}
+
+.p-radiobutton:disabled {
+    border: 2px solid #aeaeae !important;
+    background: #cacaca !important;
+}
+
+.p-radiobutton-box .p-disabled {
+    border: 2px solid #aeaeae !important;
+    background: #cacaca !important;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+  padding: 0px !important;
+  font-size: 12px !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  padding: 10px !important;
+}
+
+.p-fieldset .p-fieldset-legend {
+    padding: 8px 15px 8px 15px !important;
+    font-size: 12px !important;
+}
+
+.p-dialog {
+    min-width: 500px !important;
+}
+
+.p-dialog .p-dialog-header {
+  border-top-right-radius: 2px !important;
+  border-top-left-radius: 2px !important;
+}
+
+.p-dialog .p-dialog-footer {
+  border-bottom-right-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+}
+
+.p-dialog .p-dialog-header {
+  background-color: #f4f4f4 !important;
+  padding: 10px !important;
+  border-bottom: 2px solid #d3d3d3 !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+  padding-left: 10px !important;
+  font-size: 16px !important;
+}
+
+.p-dialog .p-dialog-content {
+  font-size: 14px !important;
+  padding: 20px 30px 20px 30px !important;
+  border-bottom: 2px solid #d3d3d3 !important;
+}
+
+.p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
+  font-size: 1.25rem !important;
+}
+
+.p-dialog .p-dialog-footer {
+  padding: 10px !important;
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
