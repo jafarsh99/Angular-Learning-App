@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Data } from './data.interface';
 import { TableModule } from 'primeng/table';
 import { MessageService } from 'primeng/api';
+import { DummyData } from './data-dummy';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -9,18 +10,9 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
 })
 export class TableComponent {
-  data: Data[] = [
-    { id: 1, name: 'John Doe', age: 30 },
-    { id: 2, name: 'John Cena', age: 35 },
-    { id: 3, name: 'John Russel', age: 25 },
-    { id: 4, name: 'John Kirby', age: 27 },
-    { id: 5, name: 'John Collins', age: 40 },
-    { id: 6, name: 'John Zero', age: 40 },
-    { id: 7, name: 'John Drak', age: 40 },
-    { id: 8, name: 'John Vladimir', age: 40 },
-    { id: 9, name: 'John Aust', age: 40 },
-    { id: 10, name: 'John Collar', age: 40 },
-  ];
+ 
+  data: Data[] = DummyData;
+  
 
   newData: Data = { id: 0, name: '', age: 0 };
   selectedRowData: Data | null = null;

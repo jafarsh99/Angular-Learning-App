@@ -27,7 +27,7 @@
       [rows]="5"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      [rowsPerPageOptions]="[5, 7, 10]"
+      [rowsPerPageOptions]="[5, 10, 25, 50, 100]"
       [(selection)]="selectedRows"
       (onRowSelect)="onRowSelect($event)"
       (onRowUnselect)="onRowUnselect($event)"
