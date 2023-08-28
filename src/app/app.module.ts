@@ -65,6 +65,10 @@ import {DropdownModule} from 'primeng/dropdown';
 import {PanelModule} from 'primeng/panel';
 import {FieldsetModule} from 'primeng/fieldset';
 import {CalendarModule} from 'primeng/calendar';
+import {ToastModule} from 'primeng/toast';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -125,6 +129,9 @@ const APP_CONTAINERS = [
     PanelModule,
     FieldsetModule,
     CalendarModule,
+    ToastModule,
+    MessageModule,
+    MessagesModule,
   ],
   exports: [BtnNavComponent],
   providers: [

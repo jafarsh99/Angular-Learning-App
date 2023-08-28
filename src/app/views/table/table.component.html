@@ -3,9 +3,26 @@
     <h3>TABEL DARI PRIME</h3>
     <p-button (click)="showDialog()" label="Tambah Data"></p-button>
   </div>
+  <div class="grid" style="margin: 10px 0px 5px 0px;">
+    <div class="col">
+      <p-dropdown
+        [options]="searchColumns"
+        [(ngModel)]="selectedSearchColumn"
+        (onChange)="search()"
+      >
+      </p-dropdown>&nbsp;
+      <input
+        pInputText
+        [(ngModel)]="searchText"
+        (input)="search()"
+        placeholder="Search..."
+      />
+    </div>
+  </div>
+
   <div class="table-wrapper">
     <p-table
-      [value]="data"
+      [value]="filteredData"
       [paginator]="true"
       [rows]="5"
       [showCurrentPageReport]="true"
@@ -16,7 +33,6 @@
       (onRowUnselect)="onRowUnselect($event)"
       (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"
       selectionMode="single"
-      styleClass="p-datatable-striped"
     >
       <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
       <ng-template pTemplate="header">
@@ -25,8 +41,9 @@
           <th>Name</th>
           <th>Age</th>
           <th class="action-row">Action</th>
-          <th class="hcheckbox"><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
-          
+          <th class="hcheckbox">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-rowData>
@@ -39,122 +56,7 @@
               <svg cIcon name="cilPencil" size="sm"></svg>
             </button>
             &nbsp;
-            <button
-              pButton
-              (click)="deleteData(rowData)"
-            >
-              <svg cIcon name="cilTrash" size="sm"></svg>
-            </button>
-          </td>
-          <td>
-            <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
-</body>
-<body>
-  <div>
-    <h3>TABEL DARI PRIME</h3>
-    <p-button (click)="showDialog()" label="Tambah Data"></p-button>
-  </div>
-  <div class="table-wrapper">
-    <p-table
-      [value]="data"
-      [paginator]="true"
-      [rows]="5"
-      [showCurrentPageReport]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      [rowsPerPageOptions]="[5, 7, 10]"
-      [(selection)]="selectedRows"
-      (onRowSelect)="onRowSelect($event)"
-      (onRowUnselect)="onRowUnselect($event)"
-      (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"
-      selectionMode="single"
-      styleClass="p-datatable-striped"
-    >
-      <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
-      <ng-template pTemplate="header">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th class="action-row">Action</th>
-          <th class="hcheckbox"><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
-          
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-rowData>
-        <tr class="tbBody">
-          <td>{{ rowData.id }}</td>
-          <td>{{ rowData.name }}</td>
-          <td>{{ rowData.age }}</td>
-          <td class="action-row">
-            <button pButton (click)="editData(rowData)">
-              <svg cIcon name="cilPencil" size="sm"></svg>
-            </button>
-            &nbsp;
-            <button
-              pButton
-              (click)="deleteData(rowData)"
-            >
-              <svg cIcon name="cilTrash" size="sm"></svg>
-            </button>
-          </td>
-          <td>
-            <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
-</body>
-<body>
-  <div>
-    <h3>TABEL DARI PRIME</h3>
-    <p-button (click)="showDialog()" label="Tambah Data"></p-button>
-  </div>
-  <div class="table-wrapper">
-    <p-table
-      [value]="data"
-      [paginator]="true"
-      [rows]="5"
-      [showCurrentPageReport]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      [rowsPerPageOptions]="[5, 7, 10]"
-      [(selection)]="selectedRows"
-      (onRowSelect)="onRowSelect($event)"
-      (onRowUnselect)="onRowUnselect($event)"
-      (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"
-      selectionMode="single"
-      styleClass="p-datatable-striped"
-    >
-      <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
-      <ng-template pTemplate="header">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th class="action-row">Action</th>
-          <th class="hcheckbox"><p-tableHeaderCheckbox></p-tableHeaderCheckbox></th>
-          
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-rowData>
-        <tr class="tbBody">
-          <td>{{ rowData.id }}</td>
-          <td>{{ rowData.name }}</td>
-          <td>{{ rowData.age }}</td>
-          <td class="action-row">
-            <button pButton (click)="editData(rowData)">
-              <svg cIcon name="cilPencil" size="sm"></svg>
-            </button>
-            &nbsp;
-            <button
-              pButton
-              (click)="deleteData(rowData)"
-            >
+            <button pButton (click)="deleteData(rowData)">
               <svg cIcon name="cilTrash" size="sm"></svg>
             </button>
           </td>
@@ -167,17 +69,65 @@
   </div>
 </body>
 
+<body>
+  <div>
+    <h3>TABEL DARI PRIME</h3>
+    <p-button (click)="showDialog()" label="Tambah Data"></p-button>
+  </div>
+  <div class="table-wrapper">
+    <p-table
+      [value]="data"
+      [paginator]="true"
+      [rows]="5"
+      [rowsPerPageOptions]="[5, 7, 10]"
+      [(selection)]="selectedData"
+      (onRowSelect)="onRowSelect2($event)"
+      (onRowUnselect)="onRowUnselect2($event)"
+      selectionMode="single"
+      dataKey="code"
+    >
+      <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th class="action-row">Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr class="tbBody" [pSelectableRow]="data_">
+          <td>{{ rowData.id }}</td>
+          <td>{{ rowData.name }}</td>
+          <td>{{ rowData.age }}</td>
+          <td class="action-row">
+            <button pButton (click)="editData(rowData)">
+              <svg cIcon name="cilPencil" size="sm"></svg>
+            </button>
+            &nbsp;
+            <button pButton (click)="deleteData(rowData)">
+              <svg cIcon name="cilTrash" size="sm"></svg>
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</body>
+
 <p-dialog
   header="Add New Data"
   [(visible)]="visible"
   [draggable]="false"
   [resizable]="false"
-  [style]="{ width: '30vw', height: '400px' }"
 >
   <div class="dialog-wrapper">
     <div class="row">
       <div class="col">
-        <h6>ID :</h6>
+        <h6>ID</h6>
+      </div>
+      <div class="col">
+        <h6>:</h6>
       </div>
       <div class="col">
         <p-inputNumber
@@ -189,7 +139,10 @@
     </div>
     <div class="row">
       <div class="col">
-        <h6>Name :</h6>
+        <h6>Name</h6>
+      </div>
+      <div class="col">
+        <h6>:</h6>
       </div>
       <div class="col">
         <input
@@ -202,7 +155,10 @@
     </div>
     <div class="row">
       <div class="col">
-        <h6>Age :</h6>
+        <h6>Age</h6>
+      </div>
+      <div class="col">
+        <h6>:</h6>
       </div>
       <div class="col">
         <p-inputNumber

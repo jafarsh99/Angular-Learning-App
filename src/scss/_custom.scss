@@ -155,11 +155,12 @@ thead, tbody, tfoot, tr, td, th {
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
-  padding: 5px !important;
+  border-width: 1px !important;
+  padding: 2px !important;
 }
 
 .p-datatable .p-datatable-thead > tr > th {
-  padding: 5px !important;
+  padding: 2px !important;
   background: #cacaca !important;
 }
 
@@ -196,9 +197,9 @@ label {
 }
 
 .p-paginator .p-paginator-current {
-  background-color: transparent !important;
+  background-color: #ffff !important;
   //   color: #6c757d !important;
-  color: transparent !important;
+  color: black !important;
   border: solid 0px white !important;
   padding-top: 0px !important;
 }
@@ -208,12 +209,13 @@ label {
   color: white !important;
 }
 .p-datatable .p-paginator-bottom {
-  padding-right: 200px;
+  // padding-right: 200px;
   border-radius: 0;
 }
-.p-paginator-page:hover,
-.p-paginator-current:hover {
-  background-color: #e9ecef !important;
+
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+  background: #007bff !important;
+  color: #ffff !important;
 }
 
 /* Gaya untuk tombol halaman saat ini */
@@ -332,6 +334,10 @@ label {
 
 .p-dialog {
     min-width: 500px !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+    border: 1px solid #bebebe !important;
+    border-bottom: 0px !important;
 }
 
 .p-dialog .p-dialog-header {
@@ -359,6 +365,7 @@ label {
   font-size: 14px !important;
   padding: 20px 30px 20px 30px !important;
   border-bottom: 2px solid #d3d3d3 !important;
+  border-radius: 2px !important;
 }
 
 .p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
@@ -369,4 +376,21 @@ label {
   padding: 10px !important;
   display: flex !important;
   flex-direction: row-reverse !important;
+}
+
+.p-toast .p-toast-message .p-toast-message-content {
+  padding: 10px !important;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon {
+  font-size: 10px !important;
+  margin: auto !important;
+}
+.p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
+  font-size: 16px !important;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
+  font-size: 14px !important;
+  margin: 0 0 0.5rem 0 !important;
 }
