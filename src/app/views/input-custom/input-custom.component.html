@@ -12,11 +12,13 @@
           label="Prime 14"
           icon="pi pi-search"
         ></p-button>
+        &nbsp;
         <p-button
           class="ui-button-primary"
           label="Prime 14"
           icon="pi pi-search"
         ></p-button>
+        &nbsp;
         <p-button
           class="ui-button-text"
           label="Prime 14"
@@ -24,9 +26,6 @@
         ></p-button>
       </div>
       <div style="margin-bottom: 10px">
-        <button pButton type="button" icon="pi pi-check" class="p-button-text">
-          Cari
-        </button>
         <input
           pInputText
           type="text"
@@ -49,6 +48,7 @@
           icon="pi pi-search"
           class="input-button-right"
         ></button>
+        &nbsp;
         <button
           pButton
           type="button"
@@ -57,8 +57,34 @@
           class="input-button-right"
         ></button>
       </div>
-      <div style="margin-bottom: 10px">
-        <p-dropdown optionLabel="name"></p-dropdown>
+      <div class="p-grid">
+        <div class="col-10 md-8 lg-8" style="margin-bottom: 10px">
+          <p-dropdown optionLabel="name"></p-dropdown> &nbsp;
+          <p-dropdown optionLabel="name"></p-dropdown> &nbsp;
+          <p-dropdown optionLabel="name"></p-dropdown>
+        </div>
+        <div class="dropdown-container" style="text-align: right">
+          <label for="dropdown">Select an option:</label>
+          <p-dropdown
+            id="dropdown"
+            [options]="options2"
+            [(ngModel)]="selectedOption"
+            optionLabel="label"
+          >
+            <ng-template let-option pTemplate="selectedItem">
+              {{ option.label }}
+            </ng-template>
+            <ng-template let-option pTemplate="item">
+              <span>{{ option.label }}</span>
+              <small>{{ option.desc }}</small>
+            </ng-template>
+          </p-dropdown>
+
+          <div *ngIf="selectedOption">
+            <p>Selected: {{ selectedOption.label }}</p>
+            <p>Description: {{ selectedOption.desc }}</p>
+          </div>
+        </div>
       </div>
       <div style="margin-bottom: 10px">
         <button
@@ -66,7 +92,7 @@
           type="button"
           label="Unduh"
           icon="pi pi-print"
-          class="p-button-text"
+          class="p-button-outlined"
         ></button
         >&nbsp;
         <button
@@ -74,7 +100,7 @@
           type="button"
           label="Rekam"
           icon="pi pi-plus"
-          class="p-button-text"
+          class="p-button-outlined"
         ></button
         >&nbsp;
         <button
@@ -82,7 +108,7 @@
           type="button"
           label="Ubah"
           icon="pi pi-pencil"
-          class="p-button-text"
+          class="p-button-outlined"
         ></button
         >&nbsp;
         <button
@@ -90,7 +116,7 @@
           type="button"
           label="Simpan"
           icon="pi pi-save"
-          class="p-button-text"
+          class="p-button-outlined"
         ></button
         >&nbsp;
         <button
@@ -98,7 +124,7 @@
           type="button"
           label="Batal"
           icon="pi pi-times"
-          class="p-button-text"
+          class="p-button-outlined p-button-danger"
         ></button
         >&nbsp;
         <button
@@ -106,7 +132,7 @@
           type="button"
           label="Oke"
           icon="pi pi-check"
-          class="p-button-text"
+          class="p-button-outlined p-button-success"
         ></button
         >&nbsp;
         <button
@@ -114,8 +140,69 @@
           type="button"
           label="Keluar"
           icon="pi pi-sign-out"
-          class="p-button-text"
+          class="p-button-outlined p-button-warning"
         ></button>
+      </div>
+      <div style="margin-bottom: 10px">
+        <button
+          pButton
+          type="button"
+          label="Unduh"
+          icon="pi pi-print"
+          class="p-button-warning"
+        ></button
+        >&nbsp;
+        <button pButton type="button" label="Rekam" icon="pi pi-plus"></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Ubah"
+          icon="pi pi-pencil"
+          class="p-button-secondary"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Simpan"
+          icon="pi pi-save"
+          class="p-button-success"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Batal"
+          icon="pi pi-times"
+          class="p-button-danger"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Oke"
+          icon="pi pi-check"
+          class="p-button-help"
+        ></button
+        >&nbsp;
+        <button
+          pButton
+          type="button"
+          label="Keluar"
+          icon="pi pi-sign-out"
+          class="p-button-danger"
+        ></button>
+      </div>
+      <div style="margin-bottom: 10px">
+        <button pButton type="button" label="Unduh"></button>&nbsp;
+        <button pButton type="button" label="Rekam"></button>&nbsp;
+        <button pButton type="button" label="Ubah"></button>&nbsp;
+        <button pButton type="button" label="Simpan"></button>&nbsp;
+        <button pButton type="button" label="Batal"></button>&nbsp;
+        <button pButton type="button" label="Oke"></button>&nbsp;
+        <button pButton type="button" label="Keluar"></button>&nbsp;
+        <button pButton type="button" label="Pilih"></button>
       </div>
       <div style="margin-bottom: 10px">
         <button pButton type="button" label="Unduh" icon="pi pi-print"></button
@@ -140,7 +227,7 @@
       <div>
         <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
       </div>
-      <div>
+      <div style="margin-top: 10px">
         <p-radioButton name="group1" value="0" label="Radio 1"></p-radioButton>
         &nbsp;
         <p-radioButton
@@ -151,30 +238,48 @@
         ></p-radioButton>
         &nbsp; <input type="radio" /> Radio 3
       </div>
+      <div style="margin-top: 20px">
+        <p-checkbox
+          name="groupname"
+          value="val1"
+          label="Value 1"
+          [(ngModel)]="selectedValues"
+        ></p-checkbox>
+        &nbsp;
+        <p-checkbox
+          name="groupname"
+          value="val2"
+          label="Value 2"
+          [(ngModel)]="selectedValues"
+        ></p-checkbox>
+      </div>
     </p-panel>
     <p-fieldset legend="Fieldset">
       <div><input pInputText type="text" class="p-inputtext-sm" /> &nbsp;</div>
-      <div>
+      <div style="margin-top: 20px">
         <button
           (click)="confirm()"
           pButton
           icon="pi pi-check"
-          label="ConfDialog"
-        ></button> &nbsp;
+          label="Confirm Dialog"
+        ></button>
+        &nbsp;
 
         <button
           (click)="succesToast()"
           pButton
           icon="pi pi-check"
           label="Success Toast"
-        ></button> &nbsp;
+        ></button>
+        &nbsp;
 
         <button
           (click)="errorToast()"
           pButton
           icon="pi pi-check"
           label="Error Toast"
-        ></button> &nbsp;
+        ></button>
+        &nbsp;
       </div>
     </p-fieldset>
   </div>

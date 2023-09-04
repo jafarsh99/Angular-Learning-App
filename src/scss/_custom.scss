@@ -20,19 +20,34 @@
 .p-dropdown .p-dropdown-label {
   font-size: 12px !important;
   padding: 5px !important;
-  min-width: 100px !important;
+  // min-width: 100px !important;
+  width: auto !important;
 }
 
 .p-dropdown .p-dropdown-trigger {
   font-size: 12px !important;
-  padding: 5px !important;
+  // padding: 5px !important;
   min-width: 20px !important;
   line-height: normal !important; /* Set line-height to normal to avoid extra spacing */
   justify-content: right !important;
+  width: auto !important;
 }
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  max-width: 300px!important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  padding: 10px 10px 0px 10px !important;
+}
+
+// .p-dropdown-item {
+//   white-space: inherit !important;
+// }
+
 .p-radiobutton .p-radiobutton-box.p-disabled {
-    background: #cacaca !important;
-    border: solid 1px #aeaeae !important;
+  background: #cacaca !important;
+  border: solid 1px #aeaeae !important;
 }
 
 .p-button {
@@ -42,11 +57,12 @@
   text-decoration: none !important;
   white-space: nowrap !important;
   cursor: pointer !important;
-  background-color: #007bff !important;
-  color: #fff !important;
+  // background-color: #007bff !important;
+  // color: #fff !important;
   font-weight: 0 !important;
   padding-right: 10px !important;
   padding-left: 10px !important;
+  // min-width: 70px !important;
 }
 
 .p-button.p-button-text {
@@ -65,7 +81,7 @@
 }
 
 .p-button:hover {
-  background-color: #0056b3 !important;
+  // background-color: #0056b3 !important;
 }
 
 .p-button:focus,
@@ -276,13 +292,14 @@ label {
 }
 .p-paginator .p-dropdown {
   max-height: 30px !important;
+  width: auto !important;
 }
 .p-paginator .p-dropdown .p-dropdown-label {
   padding-right: 0;
   font-size: 12px !important;
   max-width: 100px !important;
   max-height: 30px !important;
-  position: absolute !important;
+  // position: absolute !important;
 }
 
 .p-panel .p-panel-header {

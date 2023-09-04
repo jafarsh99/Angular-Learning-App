@@ -68,7 +68,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {ToastModule} from 'primeng/toast';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
-
+import {CheckboxModule} from 'primeng/checkbox';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -132,6 +132,7 @@ const APP_CONTAINERS = [
     ToastModule,
     MessageModule,
     MessagesModule,
+    CheckboxModule,
   ],
   exports: [BtnNavComponent],
   providers: [

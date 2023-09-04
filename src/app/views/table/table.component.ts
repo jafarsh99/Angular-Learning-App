@@ -164,4 +164,9 @@ export class TableComponent {
         .includes(this.searchText.toLowerCase())
     );
   }
+
+  batal(){
+    this.selectedRows = [];
+    console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
+  }
 }

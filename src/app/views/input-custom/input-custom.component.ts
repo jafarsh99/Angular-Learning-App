@@ -11,6 +11,8 @@ import {Message} from 'primeng//api';
 })
 export class InputCustomComponent {
   value: any;
+  selectedValues: any;
+  selectedOption: any;
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -40,4 +42,20 @@ export class InputCustomComponent {
       detail: 'Via MessageService',
     });
   }
+
+  options: any[] = [
+    { label: 'Option 1', value: 'option1' },
+    { label: 'Option 2', value: 'option2' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 4', value: 'option4' },
+    // ... tambahkan opsi lainnya ...
+  ];
+
+  options2: any[] = [
+    { label: 'Option 1', value: 'option1', desc: 'testtesttest testtesttest testtesttesttest testtesttesttest testtesttesttest testtesttesttest'  },
+    { label: 'Option 2', value: 'option2', desc: 'testtesttest testtesttest testtesttesttest testtesttesttest testtesttesttest testtesttesttest'  },
+    { label: 'Option 3', value: 'option3', desc: 'testtesttest testtesttest testtesttesttest testtesttesttest testtesttesttest testtesttesttest'  },
+    { label: 'Option 4', value: 'option4', desc: 'testtesttest testtesttest testtesttesttest testtesttesttest testtesttesttest testtesttesttest'  },
+    // ... tambahkan opsi lainnya ...
+  ];
 }
