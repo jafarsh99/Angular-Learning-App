@@ -21,6 +21,7 @@ export class TableComponent {
   selectedListTabelData: Data[] = [];
   actionValue: any;
   selectedRows: any[] = [];
+  selectedRows2: any[] = [];
   data_: any;
   selectedData: any;
 
@@ -29,11 +30,13 @@ export class TableComponent {
   searchText: string = '';
 
   filteredData: Data[] = [];
+  filteredData2: Data[] = [];
 
   constructor(private messageService: MessageService) {}
 
   ngOnInit() {
     this.filteredData = this.data;
+    this.filteredData2 = this.data;
   }
 
   isSelected(data: any): boolean {
@@ -44,7 +47,7 @@ export class TableComponent {
     if (!this.isSelected(event.data)) {
       this.selectedRows.push(event.data);
     }
-    console.log('Row selected:', event.data);
+    // console.log('Row selected:', event.data);
     console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
   }
 
@@ -52,8 +55,20 @@ export class TableComponent {
     this.selectedRows = this.selectedRows.filter(
       (row) => row.id !== event.data.id
     );
-    console.log('Row unselected:', event.data);
+    // console.log('Row unselected:', event.data);
     console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
+  }
+
+  onRowSelect2(event: any) {
+    this.selectedRows2 = [event.data];
+    // console.log('Row2 selected:', event.data);
+    console.log('DATA2 DIPILIH: ' + JSON.stringify(this.selectedRows2));
+  }
+
+  onRowUnselect2(event: any) {
+    this.selectedRows2 = [];
+    // console.log('Row2 unselected:', event.data);
+    console.log('DATA2 DIPILIH: ' + JSON.stringify(this.selectedRows2));
   }
 
   onHeaderCheckboxToggle(event: any) {
@@ -138,22 +153,6 @@ export class TableComponent {
       this.newData = { id: 0, name: '', age: 0 };
     }
     this.visible = true;
-  }
-
-  onRowSelect2(event: any) {
-    this.messageService.add({
-      severity: 'info',
-      summary: 'Product Selected',
-      detail: '',
-    });
-  }
-
-  onRowUnselect2(event: any) {
-    this.messageService.add({
-      severity: 'info',
-      summary: 'Product Unselected',
-      detail: '',
-    });
   }
 
   search() {

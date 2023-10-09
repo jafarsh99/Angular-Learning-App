@@ -1,6 +1,6 @@
 <body>
   <div>
-    <h3>TABEL DARI PRIME</h3>
+    <h3>Multiple Select Table</h3>
   </div>
   <div class="flex">
     <p-button (click)="showDialog()" label="Tambah Data"></p-button> &nbsp;
@@ -35,7 +35,7 @@
       (onRowSelect)="onRowSelect($event)"
       (onRowUnselect)="onRowUnselect($event)"
       (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"
-      selectionMode="single"
+      selectionMode="multiple"
     >
       <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
       <ng-template pTemplate="header">
@@ -74,57 +74,34 @@
 
 <body>
   <div>
-    <h3>TABEL DARI PRIME</h3>
-    <p-button (click)="showDialog()" label="Tambah Data"></p-button>
+    <h3>Single Select table</h3>
   </div>
   <div class="card table-wrapper">
     <p-table
-      [value]="data"
+      [value]="filteredData2"
       [paginator]="true"
       [rows]="5"
-      [rowsPerPageOptions]="[5, 7, 10]"
-      [(selection)]="selectedData"
+      [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 25, 50, 100]"
+      [(selection)]="selectedRows2"
       (onRowSelect)="onRowSelect2($event)"
       (onRowUnselect)="onRowUnselect2($event)"
       selectionMode="single"
-      dataKey="code"
-      [tableStyle]="{ 'min-width': '50rem' }"
     >
       <!-- <p-table [value]="data" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }"> -->
       <ng-template pTemplate="header">
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>Name</th>
-          <th>Name</th>
           <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th>Age</th>
-          <th class="action-row">Action</th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-rowData>
-        <tr class="tbBody" [pSelectableRow]="data_">
-          <td>{{ rowData.id }}</td>
-          <td>{{ rowData.name }}</td>
-          <td>{{ rowData.name }}</td>
-          <td>{{ rowData.name }}</td>
-          <td>{{ rowData.age }}</td>
-          <td>{{ rowData.age }}</td>
-          <td>{{ rowData.age }}</td>
-          <td>{{ rowData.age }}</td>
-          <td>{{ rowData.age }}</td>
-          <td class="action-row">
-            <button pButton (click)="editData(rowData)">
-              <svg cIcon name="cilPencil" size="sm"></svg>
-            </button>
-            &nbsp;
-            <button pButton (click)="deleteData(rowData)">
-              <svg cIcon name="cilTrash" size="sm"></svg>
-            </button>
-          </td>
+      <ng-template pTemplate="body" let-rowData2>
+        <tr [pSelectableRow]="rowData2" class="tbBody">
+          <td>{{ rowData2.id }}</td>
+          <td>{{ rowData2.name }}</td>
+          <td>{{ rowData2.age }}</td>
         </tr>
       </ng-template>
     </p-table>
