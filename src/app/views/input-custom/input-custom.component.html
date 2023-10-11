@@ -254,7 +254,9 @@
       </div>
     </p-panel>
     <p-fieldset legend="Fieldset">
-      <div><input pInputText type="text" class="p-inputtext-sm" /> &nbsp;</div>
+      <div><input pInputText type="text" class="p-inputtext-sm" [(ngModel)]='testModel' /> &nbsp;</div>
+      <div><input pInputText type="text" class="p-inputtext-sm" [value]="testModel" /> &nbsp;</div>
+      <div><input pInputText type="text" class="p-inputtext-sm" [value]="testModel" /> &nbsp;</div>
       <div style="margin-top: 20px">
         <button
           (click)="confirm()"

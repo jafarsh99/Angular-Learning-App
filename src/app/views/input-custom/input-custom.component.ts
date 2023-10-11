@@ -13,6 +13,7 @@ export class InputCustomComponent {
   value: any;
   selectedValues: any;
   selectedOption: any;
+  testModel: string = '';
 
   constructor(
     private confirmationService: ConfirmationService,
