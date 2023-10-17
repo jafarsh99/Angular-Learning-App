@@ -70,6 +70,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {CheckboxModule} from 'primeng/checkbox';
 import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
+import { FileUploadModule } from 'primeng/fileupload';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -135,6 +136,7 @@ const APP_CONTAINERS = [
     MessageModule,
     MessagesModule,
     CheckboxModule,
+    FileUploadModule,
   ],
   exports: [BtnNavComponent],
   providers: [

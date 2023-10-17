@@ -228,14 +228,33 @@
         <p-calendar dateFormat="dd/mm/yy" [showIcon]="true"></p-calendar>
       </div>
       <div style="margin-top: 10px">
-        <p-radioButton name="group1" value="0" label="Radio 1"></p-radioButton>
+        <p-radioButton
+          name="pizza"
+          value="Cheese"
+          [(ngModel)]="ingredient"
+          inputId="ingredient1"
+        ></p-radioButton
+        >&nbsp;
+        <label for="ingredient1" class="ml-2"> Cheese</label>
         &nbsp;
         <p-radioButton
-          name="group2"
-          value="1"
-          label="Radio 2"
+          name="pizza"
+          value="Mushroom"
+          [(ngModel)]="ingredient"
+          inputId="ingredient2"
+        ></p-radioButton
+        >&nbsp;
+        <label for="ingredient2" class="ml-2"> Mushroom</label>
+        &nbsp;
+        <p-radioButton
+          name="pizza"
+          value="Onion"
+          [(ngModel)]="ingredient"
+          inputId="ingredient4"
           [disabled]="true"
-        ></p-radioButton>
+        ></p-radioButton
+        >&nbsp;
+        <label for="ingredient4" class="ml-2">Onion</label>
       </div>
       <div style="margin-top: 20px">
         <p-checkbox
@@ -251,12 +270,41 @@
           label="Value 2"
           [(ngModel)]="selectedValues"
         ></p-checkbox>
+        &nbsp;
+        <p-checkbox
+          name="groupname"
+          value="val3"
+          label="Value 3"
+          [(ngModel)]="selectedValues"
+          [disabled]="true"
+        ></p-checkbox>
       </div>
     </p-panel>
     <p-fieldset legend="Fieldset">
-      <div><input pInputText type="text" class="p-inputtext-sm" [(ngModel)]='testModel' /> &nbsp;</div>
-      <div><input pInputText type="text" class="p-inputtext-sm" [value]="testModel" /> &nbsp;</div>
-      <div><input pInputText type="text" class="p-inputtext-sm" [value]="testModel" /> &nbsp;</div>
+      <div>
+        <input
+          pInputText
+          type="text"
+          class="p-inputtext-sm"
+          [(ngModel)]="testModel"
+        />
+        &nbsp;
+        <input
+          pInputText
+          type="text"
+          class="p-inputtext-sm"
+          [value]="testModel"
+          [disabled]="true"
+        />
+        &nbsp;
+        <input
+          pInputText
+          type="text"
+          class="p-inputtext-sm"
+          [value]="testModel"
+          [disabled]="true"
+        />
+      </div>
       <div style="margin-top: 20px">
         <button
           (click)="confirm()"

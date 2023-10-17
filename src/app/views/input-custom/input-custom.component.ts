@@ -14,6 +14,7 @@ export class InputCustomComponent {
   selectedValues: any;
   selectedOption: any;
   testModel: string = '';
+  ingredient: any;
 
   constructor(
     private confirmationService: ConfirmationService,

@@ -34,7 +34,7 @@
 }
 
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
-  max-width: 300px!important;
+  max-width: 300px !important;
 }
 
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
@@ -111,16 +111,22 @@
   border-radius: 4px 0px 0px 4px !important;
 }
 
-thead, tbody, tfoot, tr, td, th {
-    padding: 0px !important;
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  padding: 0px !important;
 }
 
 .p-datepicker table th {
-    text-align: center !important;
+  text-align: center !important;
 }
 
-.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year, .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
-    padding: 0px 10px 0px 10px !important;
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  padding: 0px 10px 0px 10px !important;
 }
 
 .p-table {
@@ -184,9 +190,18 @@ label {
   font-weight: 500 !important;
 }
 
-.p-checkbox.p-highlight .p-checkbox-box {
-  background-color: red !important;
-  border-color: red !important;
+// .p-checkbox.p-highlight.p-checkbox-box {
+//   background-color: red !important;
+//   border-color: red !important;
+// }
+
+.p-checkbox .p-checkbox-box.p-disabled {
+  background: #cacaca !important;
+  border: solid 1px #aeaeae !important;
+}
+
+.p-checkbox-label.ng-star-inserted.p-disabled {
+  // color: #cacaca;
 }
 
 /* Gaya untuk paginator */
@@ -317,7 +332,7 @@ label {
 }
 
 .p-radiobutton-box.p-highlight .p-radiobutton-icon {
-    margin-bottom: 1px;
+  margin-bottom: 1px;
 }
 
 .p-button:disabled {
@@ -326,13 +341,13 @@ label {
 }
 
 .p-radiobutton:disabled {
-    border: 2px solid #aeaeae !important;
-    background: #cacaca !important;
+  border: 2px solid #aeaeae !important;
+  background: #cacaca !important;
 }
 
 .p-radiobutton-box .p-disabled {
-    border: 2px solid #aeaeae !important;
-    background: #cacaca !important;
+  border: 2px solid #aeaeae !important;
+  background: #cacaca !important;
 }
 
 .p-dropdown-panel .p-dropdown-items {
@@ -345,16 +360,16 @@ label {
 }
 
 .p-fieldset .p-fieldset-legend {
-    padding: 8px 15px 8px 15px !important;
-    font-size: 12px !important;
+  padding: 8px 15px 8px 15px !important;
+  font-size: 12px !important;
 }
 
 .p-dialog {
-    min-width: 500px !important;
-    border-radius: 2px !important;
-    box-shadow: none !important;
-    border: 1px solid #bebebe !important;
-    border-bottom: 0px !important;
+  min-width: 500px !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+  border: 1px solid #bebebe !important;
+  border-bottom: 0px !important;
 }
 
 .p-dialog .p-dialog-header {

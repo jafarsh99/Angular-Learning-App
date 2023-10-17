@@ -4,6 +4,23 @@
       <h2>Upload Img</h2>
       <label>Simple Feature Upload image</label>
     </div>
-    <p-panel header="Upload/Download"> </p-panel>
+    <p-panel header="Upload/Download">
+      <p-fileUpload
+        name="file"
+        url="/your-upload-api-url"
+        (onUpload)="onUpload($event)"
+        [maxFileSize]="1000000"
+        accept="image/*"
+        chooseLabel="Choose"
+        uploadLabel="Upload"
+        cancelLabel="Cancel"
+      ></p-fileUpload>
+
+      <div *ngFor="let file of uploadedFiles">
+        <p>File Name: {{ file.originalName }}</p>
+        <p>File Size: {{ file.size / 1024 }} KB</p>
+        <p>File Type: {{ file.type }}</p>
+      </div>
+    </p-panel>
   </div>
 </body>
