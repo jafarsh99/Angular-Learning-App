@@ -33,4 +33,7 @@ export class BtnNavComponent {
     goToCustomPrime(){
       this.router.navigate(['custom-prime']);
     }
+    goToUploadImg(){
+      this.router.navigate(['upload-img']);
+    }
 }

@@ -69,6 +69,7 @@ import {ToastModule} from 'primeng/toast';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {CheckboxModule} from 'primeng/checkbox';
+import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -85,6 +86,7 @@ const APP_CONTAINERS = [
     BtnNavComponent,
     DarkmodeComponent,
     InputCustomComponent,
+    UploadimgComponent,
   ],
   imports: [
     BrowserModule,

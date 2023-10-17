@@ -11,6 +11,7 @@ import { TableComponent } from './views/table/table.component';
 import { AccordionComponent } from './views/accordion/accordion.component';
 import { DarkmodeComponent } from './views/darkmode/darkmode.component';
 import { InputCustomComponent } from './views/input-custom/input-custom.component';
+import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
 
 const routes: Routes = [
   {
@@ -46,11 +47,18 @@ const routes: Routes = [
           title: 'Darkmode',
         },
       },
-            {
+      {
         path: 'custom-prime',
         component: InputCustomComponent,
         data: {
           title: 'CustomPrime',
+        },
+      },
+      {
+        path: 'upload-img',
+        component: UploadimgComponent,
+        data: {
+          title: 'UploadImg',
         },
       },
       {
