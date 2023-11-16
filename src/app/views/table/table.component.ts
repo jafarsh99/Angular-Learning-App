@@ -3,6 +3,8 @@ import { Data } from './data.interface';
 import { TableModule } from 'primeng/table';
 import { MessageService } from 'primeng/api';
 import { DummyData } from './data-dummy';
+import { DialogService } from 'primeng/dynamicdialog';
+import { LookupCheckedTabelComponent } from '../lookup/lookup-checked-tabel/lookup-checked-tabel.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -32,7 +34,13 @@ export class TableComponent {
   filteredData: Data[] = [];
   filteredData2: Data[] = [];
 
-  constructor(private messageService: MessageService) {}
+  displayDialog: boolean = false;
+  selectedDataForDialog: Data[] = [];
+
+
+  constructor(
+    private messageService: MessageService,
+    private dialogService: DialogService) {}
 
   ngOnInit() {
     this.filteredData = this.data;
@@ -63,6 +71,11 @@ export class TableComponent {
     this.selectedRows2 = [event.data];
     // console.log('Row2 selected:', event.data);
     console.log('DATA2 DIPILIH: ' + JSON.stringify(this.selectedRows2));
+  }
+
+  clearCheckedData() {
+    this.selectedRows = [];
+    console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
   }
 
   onRowUnselect2(event: any) {
@@ -168,4 +181,30 @@ export class TableComponent {
     this.selectedRows = [];
     console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
   }
+
+  showCheckedDataDialog() {
+    this.selectedDataForDialog = [...this.selectedRows];
+    this.displayDialog = true;
+  }
+
+  closeDialog() {
+    this.displayDialog = false;
+  }
+  
+  openLookup() {
+    const ref = this.dialogService.open(LookupCheckedTabelComponent, {
+      header: 'Lookup Data',
+      width: '70%',
+      data: { selectedRows: this.selectedRows },
+    });
+
+    // Callback yang dipanggil setelah dialog ditutup
+    ref.onClose.subscribe((selectedRows: Data[]) => {
+      if (selectedRows) {
+        // Lakukan sesuatu dengan data yang dipilih setelah dialog ditutup
+        console.log(selectedRows);
+      }
+    });
+  }
+  
 }

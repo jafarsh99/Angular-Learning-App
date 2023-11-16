@@ -80,9 +80,9 @@
   font-weight: 900 !important;
 }
 
-.p-button:hover {
-  // background-color: #0056b3 !important;
-}
+// .p-button:hover {
+//   // background-color: #0056b3 !important;
+// }
 
 .p-button:focus,
 .p-button.focus {
@@ -200,9 +200,9 @@ label {
   border: solid 1px #aeaeae !important;
 }
 
-.p-checkbox-label.ng-star-inserted.p-disabled {
-  // color: #cacaca;
-}
+// .p-checkbox-label.ng-star-inserted.p-disabled {
+//   // color: #cacaca;
+// }
 
 /* Gaya untuk paginator */
 .p-paginator {
@@ -425,4 +425,8 @@ label {
 .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
   font-size: 14px !important;
   margin: 0 0 0.5rem 0 !important;
+}
+
+img.ng-star-inserted {
+  width: 150px;
 }

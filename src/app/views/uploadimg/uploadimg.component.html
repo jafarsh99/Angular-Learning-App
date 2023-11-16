@@ -7,20 +7,23 @@
     <p-panel header="Upload/Download">
       <p-fileUpload
         name="file"
-        url="/your-upload-api-url"
+        url="/https://www.primefaces.org/cdn/api/upload.php"
         (onUpload)="onUpload($event)"
+        [multiple]="true"
         [maxFileSize]="1000000"
         accept="image/*"
         chooseLabel="Choose"
         uploadLabel="Upload"
         cancelLabel="Cancel"
-      ></p-fileUpload>
-
-      <div *ngFor="let file of uploadedFiles">
-        <p>File Name: {{ file.originalName }}</p>
-        <p>File Size: {{ file.size / 1024 }} KB</p>
-        <p>File Type: {{ file.type }}</p>
-      </div>
+      >
+        <ng-template pTemplate="content">
+          <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">
+              {{ file.name }} - {{ file.size }} bytes
+            </li>
+          </ul>
+        </ng-template>
+      </p-fileUpload>
     </p-panel>
   </div>
 </body>

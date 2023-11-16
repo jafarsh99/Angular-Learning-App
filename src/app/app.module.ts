@@ -71,6 +71,9 @@ import {MessageModule} from 'primeng/message';
 import {CheckboxModule} from 'primeng/checkbox';
 import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
 import { FileUploadModule } from 'primeng/fileupload';
+import { ToolbarModule } from 'primeng/toolbar';
+import { LookupCheckedTabelComponent } from './views/lookup/lookup-checked-tabel/lookup-checked-tabel.component';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -88,6 +91,7 @@ const APP_CONTAINERS = [
     DarkmodeComponent,
     InputCustomComponent,
     UploadimgComponent,
+    LookupCheckedTabelComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,6 +141,8 @@ const APP_CONTAINERS = [
     MessagesModule,
     CheckboxModule,
     FileUploadModule,
+    ToolbarModule,
+    DynamicDialogModule,
   ],
   exports: [BtnNavComponent],
   providers: [
@@ -147,7 +153,8 @@ const APP_CONTAINERS = [
     IconSetService,
     Title,
     ConfirmationService,
-  ],
+    DialogService,
+  ], 
   bootstrap: [AppComponent],
 })
 export class AppModule {}
