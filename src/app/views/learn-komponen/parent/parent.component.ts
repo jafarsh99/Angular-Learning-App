@@ -19,6 +19,7 @@ export class ParentComponent {
   komponenChildTiga! : ChildTigaComponent;
 
   dataFromChild3: string = '';
+  selectedDataFromChild2: any;
   
   constructor(){
 
@@ -27,5 +28,14 @@ export class ParentComponent {
 
   receiveDataFromChild3(data: string){
     this.dataFromChild3 = data;
+  }
+
+  receiveDataFromChild2(data: any){
+    this.selectedDataFromChild2 = data;
+
+    this.komponenChildSatu.child1Form.patchValue({
+      selectedName: data.name,
+      selectedAge: data.age,
+    });
   }
 }

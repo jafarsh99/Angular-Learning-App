@@ -1,9 +1,77 @@
+<p-panel header="Data dari Child 2">
+  <div>
+    <div class="p-grid" style="display: flex">
+      <div class="col-2">
+        <p>Name :</p>
+      </div>
+      <div class="col-4">
+        <input
+          type="text"
+          pInputText
+          [value]="selectedDataFromChild2?.name || ''"
+          [style]="{ width: '100%' }"
+        />
+        &nbsp;
+      </div>
+    </div>
+    <div class="p-grid" style="display: flex">
+      <div class="col-2">
+        <p>Age :</p>
+      </div>
+      <div class="col-4">
+        <input
+          type="text"
+          pInputText
+          [value]="selectedDataFromChild2?.age || ''"
+          [style]="{ width: '100%' }"
+        />
+        &nbsp;
+      </div>
+    </div>
+  </div>
+</p-panel>
+<p-panel header="Data dari Child 2 dgn FormControl" [toggleable]="true">
+    <form [formGroup]="child1Form">
+    <div>
+      <div class="p-grid" style="display: flex">
+        <div class="col-2">
+          <p>Name :</p>
+        </div>
+        <div class="col-4">
+          <input
+            type="text"
+            pInputText
+            formControlName="selectedName"
+            [style]="{ width: '100%' }"
+          />
+          &nbsp;
+        </div>
+      </div>
+      <div class="p-grid" style="display: flex">
+        <div class="col-2">
+          <p>Age :</p>
+        </div>
+        <div class="col-4">
+          <input
+            type="text"
+            pInputText
+            formControlName="selectedAge"
+            [style]="{ width: '100%' }"
+          />
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    </form>
+  </p-panel>
 
-<div class="p-grid" style="display: flex;">
-    <div class="col-3">
-        <p>Data dari Child 3 :</p>
+<p-panel header="Data dari Child 3">
+  <div class="p-grid" style="display: flex">
+    <div class="col-5">
+      <p>Data dari Child 3 :</p>
     </div>
-    <div class="col-4">
-        <input type="text" pInputText [(ngModel)]="valueChild3" /> &nbsp;
+    <div class="col-5">
+      <input type="text" pInputText [(ngModel)]="valueChild3" /> &nbsp;
     </div>
-</div>
+  </div>
+</p-panel>
