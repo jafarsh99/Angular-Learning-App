@@ -12,6 +12,7 @@ import { AccordionComponent } from './views/accordion/accordion.component';
 import { DarkmodeComponent } from './views/darkmode/darkmode.component';
 import { InputCustomComponent } from './views/input-custom/input-custom.component';
 import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
+import { ParentComponent } from './views/learn-komponen/parent/parent.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,13 @@ const routes: Routes = [
         component: UploadimgComponent,
         data: {
           title: 'UploadImg',
+        },
+      },
+      {
+        path: 'parent-child',
+        component: ParentComponent,
+        data: {
+          title: 'Parent',
         },
       },
       {

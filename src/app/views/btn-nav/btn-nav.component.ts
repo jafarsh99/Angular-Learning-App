@@ -36,4 +36,7 @@ export class BtnNavComponent {
     goToUploadImg(){
       this.router.navigate(['upload-img']);
     }
+    goToKomponen(){
+      this.router.navigate(['parent-child']);
+    }
 }

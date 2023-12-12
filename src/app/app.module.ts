@@ -74,6 +74,11 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ToolbarModule } from 'primeng/toolbar';
 import { LookupCheckedTabelComponent } from './views/lookup/lookup-checked-tabel/lookup-checked-tabel.component';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+import { ParentComponent } from './views/learn-komponen/parent/parent.component';
+import { ChildSatuComponent } from './views/learn-komponen/child-satu/child-satu.component';
+import { ChildDuaComponent } from './views/learn-komponen/child-dua/child-dua.component';
+import { ChildTigaComponent } from './views/learn-komponen/child-tiga/child-tiga.component';
+import { LookupDataComponent } from './views/learn-komponen/lookup/lookup-data/lookup-data.component';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -92,6 +97,11 @@ const APP_CONTAINERS = [
     InputCustomComponent,
     UploadimgComponent,
     LookupCheckedTabelComponent,
+    ParentComponent,
+    ChildSatuComponent,
+    ChildDuaComponent,
+    ChildTigaComponent,
+    LookupDataComponent,
   ],
   imports: [
     BrowserModule,

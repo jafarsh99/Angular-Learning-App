@@ -1,0 +1,27 @@
+<body>
+    <div class="upload-wrapper">
+        <div>
+            <h2>Parent</h2>
+            <label>Parent Component</label>
+        </div>
+        <div class="p-grid" style="display: flex;">
+            <div class="col-6 p-1">
+                <p-panel header="Child 1">
+                    <app-child-satu [valueChild3]="dataFromChild3"></app-child-satu>
+                </p-panel>
+            </div>
+            <div class="col-6 p-1">
+                <p-panel header="Child 2">
+                    <app-child-dua></app-child-dua>
+                </p-panel>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="col p-1">
+                <p-panel header="Child 3">
+                    <app-child-tiga (dataEmitter)="receiveDataFromChild3($event)"></app-child-tiga>
+                </p-panel>
+            </div>
+        </div>
+    </div>
+</body>

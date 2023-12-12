@@ -1,0 +1,12 @@
+<div class="p-grid" style="display: flex;">
+  <div class="col-2">
+    <input type="text" pInputText [(ngModel)]="sendData" /> &nbsp;
+  </div>
+  <div class="col-3">
+    <p-button
+      class="ui-button"
+      label="kirim ke child 1"
+      (onClick)="sendDataFromChild3()"
+    ></p-button>
+  </div>
+</div>
