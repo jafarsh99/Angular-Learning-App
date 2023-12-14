@@ -79,6 +79,7 @@ import { ChildSatuComponent } from './views/learn-komponen/child-satu/child-satu
 import { ChildDuaComponent } from './views/learn-komponen/child-dua/child-dua.component';
 import { ChildTigaComponent } from './views/learn-komponen/child-tiga/child-tiga.component';
 import { LookupDataComponent } from './views/learn-komponen/lookup/lookup-data/lookup-data.component';
+import {KeyFilterModule} from 'primeng/keyfilter';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -153,6 +154,7 @@ const APP_CONTAINERS = [
     FileUploadModule,
     ToolbarModule,
     DynamicDialogModule,
+    KeyFilterModule,
   ],
   exports: [BtnNavComponent],
   providers: [

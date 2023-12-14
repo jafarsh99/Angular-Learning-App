@@ -6,6 +6,7 @@
     </div>
     <p-panel header="Contoh Panel Kustom">
       <div style="margin-bottom: 10px">
+        <input type="text" pInputText pKeyFilter="alpha" placeholder="Alphabetic"> &nbsp;
         <input type="text" pInputText [(ngModel)]="value" /> &nbsp;
         <p-button
           class="ui-button"
@@ -282,6 +283,9 @@
     </p-panel>
     <p-fieldset legend="Fieldset">
       <div>
+        <form [formGroup]="myForm">
+          <input pInputText type="text" formControlName="myInput">
+        </form>
         <input
           pInputText
           type="text"

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import {Message} from 'primeng//api';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-custom',
@@ -20,6 +21,10 @@ export class InputCustomComponent {
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {}
+
+  myForm = new FormGroup({
+    myInput: new FormControl('', [Validators.pattern(/[\/-]/)])
+  });
 
   confirm() {
     this.confirmationService.confirm({

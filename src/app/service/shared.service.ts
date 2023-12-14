@@ -9,6 +9,7 @@ export class SharedService {
   private paramStore = new Map<string, any>();
   // event emitter digunakan saat pindah dari child form ke parent
   public resume = new EventEmitter<any>();
+  public resume2 = new EventEmitter<{ key: string, data: any }>();
   constructor(private location: Location) {}
 
   getParam(key: string) {
@@ -21,6 +22,10 @@ export class SharedService {
 
   hasParam(key: string) {
     return this.paramStore.has(key);
+  }
+
+  setResumeData(key: string, data: any) {
+    this.resume.emit({ key, data });
   }
 
   // method untuk balik ke url parent

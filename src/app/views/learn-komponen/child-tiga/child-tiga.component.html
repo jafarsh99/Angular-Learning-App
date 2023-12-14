@@ -1,4 +1,4 @@
-<div class="p-grid" style="display: flex;">
+<div class="p-grid" style="display: flex">
   <div class="col-2">
     <input type="text" pInputText [(ngModel)]="sendData" /> &nbsp;
   </div>
@@ -10,3 +10,18 @@
     ></p-button>
   </div>
 </div>
+<div class="p-grid" style="display: flex">
+  <div class="col-12" style="display: flex;">
+    <p-button
+      class="ui-button"
+      label="Lookup Data"
+      (onClick)="lookupData()"
+    ></p-button> &nbsp;
+    <p-button
+    class="ui-button"
+    label="Kirim ke Child 2"
+    (onClick)="sendDataToChild2()"
+  ></p-button>
+  </div>
+</div>
+<p-toast></p-toast>
