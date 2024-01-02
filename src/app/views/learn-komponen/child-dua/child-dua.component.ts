@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
 import { LookupCheckedTabelComponent } from '../../lookup/lookup-checked-tabel/lookup-checked-tabel.component';
 import { Data } from '../../table/data.interface';
@@ -16,6 +16,7 @@ import { Subscription } from 'rxjs';
 })
 export class ChildDuaComponent implements OnInit{
   @Output() dataChild2: EventEmitter<string> = new EventEmitter<string>();
+  @Input() selectedData: Data | undefined;
   data: Data[] = DummyData;
   valueChild3: string = '';
   private subscription!: Subscription;

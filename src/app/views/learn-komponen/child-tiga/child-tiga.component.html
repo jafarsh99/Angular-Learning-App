@@ -24,4 +24,23 @@
   ></p-button>
   </div>
 </div>
+<div class="table-wrapper">
+  <p-table [value]="data" [(selection)]="selectedRows" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)"
+  selectionMode="single">
+    <ng-template pTemplate="header">
+      <tr>
+        <!-- <th>Select</th> -->
+        <th *ngFor="let col of cols">{{ col.header }}</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData>
+      <tr [pSelectableRow]="rowData">
+        <!-- <td>
+          <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+        </td> -->
+        <td *ngFor="let col of cols">{{ rowData[col.field] }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
 <p-toast></p-toast>

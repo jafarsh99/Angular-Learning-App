@@ -7,19 +7,22 @@
         <div class="p-grid" style="display: flex;">
             <div class="col-6 p-1">
                 <p-panel header="Child 1">
-                    <app-child-satu [valueChild3]="dataFromChild3" [selectedDataFromChild2]="selectedDataFromChild2"></app-child-satu>
+                    <app-child-satu [valueChild3]="dataFromChild3" [selectedDataFromChild2]="selectedDataFromChild2"
+                    ></app-child-satu>
                 </p-panel>
             </div>
             <div class="col-6 p-1">
                 <p-panel header="Child 2">
-                    <app-child-dua (dataChild2)="receiveDataFromChild2($event)"></app-child-dua>
+                    <app-child-dua (dataChild2)="receiveDataFromChild2($event)"
+                    [selectedData]="selectedData"></app-child-dua>
                 </p-panel>
             </div>
         </div>
         <div class="p-grid">
             <div class="col p-1">
                 <p-panel header="Child 3">
-                    <app-child-tiga (dataEmitter)="receiveDataFromChild3($event)"></app-child-tiga>
+                    <app-child-tiga (dataEmitter)="receiveDataFromChild3($event)"
+                    (dataSelected)="onDataSelected($event)"></app-child-tiga>
                 </p-panel>
             </div>
         </div>

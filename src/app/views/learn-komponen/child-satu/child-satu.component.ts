@@ -11,8 +11,8 @@ export class ChildSatuComponent {
   @Input() selectedDataFromChild2: any;
 
   child1Form = new FormGroup({
-    selectedName: new FormControl(''),
-    selectedAge: new FormControl(''),
+    selectedName: new FormControl({ value: '', disabled: false }),
+    selectedAge: new FormControl({ value: '', disabled: false }),
   });
   
   constructor() {

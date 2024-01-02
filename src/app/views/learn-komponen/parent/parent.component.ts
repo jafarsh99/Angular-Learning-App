@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ChildSatuComponent } from '../child-satu/child-satu.component';
 import { ChildDuaComponent } from '../child-dua/child-dua.component';
 import { ChildTigaComponent } from '../child-tiga/child-tiga.component';
+import { Data } from '../child-tiga/data.interface';
 
 @Component({
   selector: 'app-parent',
@@ -20,6 +21,8 @@ export class ParentComponent {
 
   dataFromChild3: string = '';
   selectedDataFromChild2: any;
+  selectedData: Data | undefined;
+  checkboxSelectedData: Data[] = [];
   
   constructor(){
 
@@ -37,5 +40,13 @@ export class ParentComponent {
       selectedName: data.name,
       selectedAge: data.age,
     });
+  }
+
+  onDataSelected(selectedData: Data[]) {
+    this.selectedData = selectedData[0];
+  }
+
+  onCheckboxSelected(checkboxSelectedData: Data[]) {
+    this.checkboxSelectedData = checkboxSelectedData;
   }
 }

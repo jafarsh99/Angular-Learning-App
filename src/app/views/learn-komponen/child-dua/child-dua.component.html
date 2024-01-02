@@ -16,5 +16,13 @@
         <input type="text" pInputText [(ngModel)]="valueChild3" /> &nbsp;
       </div>
     </div>
-  </p-panel>
+    <div *ngIf="selectedData">
+      <h3>Selected Data in Child2:</h3>
+      <ul>
+        <li>ID: {{ selectedData.id }}</li>
+        <li>Name: {{ selectedData.name }}</li>
+        <li>Age: {{ selectedData.age }}</li>
+      </ul>
+    </div>
+</p-panel>
 <p-toast></p-toast>
