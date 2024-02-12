@@ -36,17 +36,26 @@ export class InputCustomComponent {
   }
   succesToast() {
     this.messageService.add({
+      sticky: true,
       severity: 'success',
       summary: 'Service Message',
       detail: 'Via MessageService',
+    });
+  }
+  warnToast() {
+    this.messageService.add({
+      sticky: true,
+      severity: 'warn',
+      summary: 'Informasi',
+      detail: 'Captcha tidak valid',
     });
   }
   errorToast() {
     this.messageService.add({
       sticky: true,
       severity: 'error',
-      summary: 'Service Message',
-      detail: 'Via MessageService',
+      summary: 'Informasi',
+      detail: 'Captcha tidak valid',
     });
   }
 

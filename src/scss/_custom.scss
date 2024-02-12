@@ -410,23 +410,54 @@ label {
   flex-direction: row-reverse !important;
 }
 
+
+.p-toast {
+  right: 15px !important; 
+  max-width: 300px !important;
+}
+
+.p-toast .p-toast-message {
+  width: auto !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  border-left: none !important;
+}
+
 .p-toast .p-toast-message .p-toast-message-content {
   padding: 10px !important;
 }
 
 .p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon {
-  font-size: 10px !important;
-  margin: auto !important;
+  font-size: 16px !important;
+  margin-top: 5px !important;
 }
 .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
-  font-size: 16px !important;
+  font-size: 14px !important;
 }
 
 .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
-  font-size: 14px !important;
+  font-size: 12px !important;
   margin: 0 0 0.5rem 0 !important;
+}
+
+.p-toast .p-toast-message .p-toast-message-content .p-icon:not(.p-toast-icon-close-icon) {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+  background: #ffeaea !important; /* Ganti dengan warna solid yang diinginkan */
+}
+
+.p-toast .p-toast-message.p-toast-message-success {
+  background: #e4ffe4 !important; /* Ganti dengan warna solid yang diinginkan */
+}
+
+.p-toast .p-toast-message.p-toast-message-warn {
+  background: #ffecb9 !important; /* Ganti dengan warna solid yang diinginkan */
 }
 
 img.ng-star-inserted {
   width: 150px;
 }
+
