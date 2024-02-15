@@ -414,6 +414,7 @@ label {
 .p-toast {
   right: 15px !important; 
   max-width: 300px !important;
+  opacity: 1 !important;
 }
 
 .p-toast .p-toast-message {
@@ -421,6 +422,7 @@ label {
   white-space: normal !important;
   word-wrap: break-word !important;
   border-left: none !important;
+  opacity: 1 !important;
 }
 
 .p-toast .p-toast-message .p-toast-message-content {
