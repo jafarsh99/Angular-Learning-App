@@ -365,7 +365,7 @@ label {
 }
 
 .p-dialog {
-  min-width: 500px !important;
+  min-width: 400px !important;
   border-radius: 2px !important;
   box-shadow: none !important;
   border: 1px solid #bebebe !important;
@@ -463,3 +463,37 @@ img.ng-star-inserted {
   width: 150px;
 }
 
+.p-inline-message {
+  height: 30px !important;
+}
+.p-inline-message .p-inline-message-text {
+  font-size: 12px !important;
+}
+.p-message .p-message-wrapper {
+  padding: 0.5rem 0.5rem !important;
+  font-size: 14px !important;
+}
+.p-message.p-message-success {
+  border: none !important;
+}
+.p-message.p-message-info {
+  border: none !important;
+}
+.p-message.p-message-warn {
+  border: none !important;
+}
+.p-message.p-message-error {
+  border: none !important;
+}
+
+
+.custom-upload img.ng-star-inserted {
+  display: none !important;
+}
+.custom-upload div.p-fileupload-files div.ng-star-inserted div.p-fileupload-row.ng-star-inserted div{
+  display: contents !important;
+}
+
+.custom-upload .p-fileupload-row {
+  justify-content: space-between !important;
+}

@@ -6,6 +6,7 @@
     </div>
     <p-panel header="Upload/Download">
       <p-fileUpload
+        class="custom-upload"
         name="file"
         url="/https://www.primefaces.org/cdn/api/upload.php"
         (onUpload)="onUpload($event)"
@@ -13,7 +14,26 @@
         [maxFileSize]="1000000"
         accept="image/*"
         chooseLabel="Choose"
-        uploadLabel="Upload"
+        uploadLabel="Upload"  
+        cancelLabel="Cancel"
+      >
+        <ng-template pTemplate="content">
+          <ul *ngIf="uploadedFiles.length">
+            <li *ngFor="let file of uploadedFiles">
+              {{ file.name }} - {{ file.size }} bytes
+            </li>
+          </ul>
+        </ng-template>
+      </p-fileUpload>
+      <p-fileUpload
+        name="file"
+        url="/https://www.primefaces.org/cdn/api/upload.php"
+        (onUpload)="onUpload($event)"
+        [multiple]="true"
+        [maxFileSize]="1000000"
+        accept="image/*"
+        chooseLabel="Choose"
+        uploadLabel="Upload"  
         cancelLabel="Cancel"
       >
         <ng-template pTemplate="content">

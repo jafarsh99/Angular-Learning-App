@@ -33,6 +33,7 @@ export class TableComponent {
 
   filteredData: Data[] = [];
   filteredData2: Data[] = [];
+  filteredData3: Data[] = [];
 
   displayDialog: boolean = false;
   selectedDataForDialog: Data[] = [];

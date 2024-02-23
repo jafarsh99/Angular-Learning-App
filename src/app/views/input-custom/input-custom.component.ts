@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import {Message} from 'primeng//api';
@@ -10,17 +10,28 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./input-custom.component.scss'],
   providers: [MessageService],
 })
-export class InputCustomComponent {
+export class InputCustomComponent implements OnInit {
   value: any;
   selectedValues: any;
   selectedOption: any;
   testModel: string = '';
   ingredient: any;
+  msgs1: Message[] = [];
 
   constructor(
     private confirmationService: ConfirmationService,
     private messageService: MessageService
   ) {}
+
+  ngOnInit() {
+    this.msgs1 = [
+        {severity:'success', summary:'Success', detail:'Message Content'},
+        {severity:'info', summary:'Info', detail:'Message Content'},
+        {severity:'warn', summary:'Warning', detail:'Message Content'},
+        {severity:'error', summary:'Error', detail:'Message Content'},
+        {severity:'custom', summary:'Custom', detail:'Message Content', icon: 'pi-file'}
+    ];
+}
 
   myForm = new FormGroup({
     myInput: new FormControl('', [Validators.pattern(/[\/-]/)])
@@ -29,6 +40,14 @@ export class InputCustomComponent {
   confirm() {
     this.confirmationService.confirm({
       message: 'Are you sure that you want to perform this action?',
+      accept: () => {
+        //Actual logic to perform a confirmation
+      },
+    });
+  }
+  confirm2() {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to perform this action? Lorem Ipsum Dolor Sit Amet Wingardium Leviosa',
       accept: () => {
         //Actual logic to perform a confirmation
       },

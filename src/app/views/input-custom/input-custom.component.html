@@ -32,8 +32,14 @@
           type="text"
           class="p-inputtext-sm"
           [disabled]="true"
-        />
-        &nbsp;
+        /> &nbsp;
+        <input
+          pInputText
+          type="text"
+          class="p-inputtext-sm"
+          [disabled]="false"
+         /> &nbsp;
+        <p-message severity="error" text="Field is required"></p-message> &nbsp;
         <p-button
           class="ui-button ui-button-primary ui-button-text"
           label="Prime 14"
@@ -280,6 +286,14 @@
           [disabled]="true"
         ></p-checkbox>
       </div>
+      <div>
+        <p>p-message component is used to display inline messages mostly within forms.</p>
+        <p-message severity="info" text="Message Content" styleClass="mr-2"></p-message>
+        <p-message severity="success" text="Message Content" styleClass="mr-2"></p-message>
+        <p-message severity="warn" text="Message Content" styleClass="mr-2"></p-message>
+        <p-message severity="error" text="Message Content"></p-message>
+        <p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+      </div>
     </p-panel>
     <p-fieldset legend="Fieldset">
       <div>
@@ -315,6 +329,13 @@
           pButton
           icon="pi pi-check"
           label="Confirm Dialog"
+        ></button>
+        &nbsp;
+        <button
+        (click)="confirm2()"
+        pButton
+        icon="pi pi-check"
+        label="Confirm Dialog 2"
         ></button>
         &nbsp;
 

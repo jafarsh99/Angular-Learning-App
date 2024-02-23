@@ -16,6 +16,7 @@ export class UploadimgComponent {
     for (const file of event.files) {
       // file.url = URL.createObjectURL(file);
       this.uploadedFiles.push(file);
+      
     }
     console.log('FILE : ', this.uploadedFiles);
 
