@@ -448,15 +448,35 @@ label {
 }
 
 .p-toast .p-toast-message.p-toast-message-error {
-  background: #ffeaea !important; /* Ganti dengan warna solid yang diinginkan */
+  background: #f2dedf !important; /* Ganti dengan warna solid yang diinginkan */
+  color: #a1525b !important;
 }
+// .p-toast .p-toast-message.p-toast-message-error .p-icon{
+//   color: #a1525b !important;
+// }
 
 .p-toast .p-toast-message.p-toast-message-success {
   background: #e4ffe4 !important; /* Ganti dengan warna solid yang diinginkan */
+  color: #178C67 !important;
+}
+.p-toast .p-toast-message.p-toast-message-success {
+  color: #178C67 !important;
 }
 
 .p-toast .p-toast-message.p-toast-message-warn {
-  background: #ffecb9 !important; /* Ganti dengan warna solid yang diinginkan */
+  background: #fdf8e4 !important; /* Ganti dengan warna solid yang diinginkan */
+  color: #8d725d !important;
+}
+// .p-toast .p-toast-message.p-toast-message-warn .p-icon{
+//   color: #8d725d !important;
+// }
+
+.p-toast .p-toast-message.p-toast-message-info {
+  background: #d9edf6 !important;
+  color: #698fa5 !important;
+}
+.p-toast .p-toast-message.p-toast-message-info .p-icon {
+  color: #65aed7 !important;
 }
 
 img.ng-star-inserted {

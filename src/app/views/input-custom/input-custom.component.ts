@@ -77,6 +77,14 @@ export class InputCustomComponent implements OnInit {
       detail: 'Captcha tidak valid',
     });
   }
+  infoToast() {
+    this.messageService.add({
+      sticky: true,
+      severity: 'info',
+      summary: 'Informasi',
+      detail: 'Captcha tidak valid',
+    });
+  }
 
   options: any[] = [
     { label: 'Option 1', value: 'option1' },
