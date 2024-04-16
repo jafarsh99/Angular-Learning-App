@@ -478,6 +478,11 @@ label {
 .p-toast .p-toast-message.p-toast-message-info .p-icon {
   color: #65aed7 !important;
 }
+.p-toast .p-toast-message .p-toast-message-content .p-toast-message-icon {
+  font-size: 16px !important;
+  margin-top: 5px !important;
+  font-weight: bold !important;
+}
 
 img.ng-star-inserted {
   width: 150px;
