@@ -80,6 +80,9 @@ import { ChildDuaComponent } from './views/learn-komponen/child-dua/child-dua.co
 import { ChildTigaComponent } from './views/learn-komponen/child-tiga/child-tiga.component';
 import { LookupDataComponent } from './views/learn-komponen/lookup/lookup-data/lookup-data.component';
 import {KeyFilterModule} from 'primeng/keyfilter';
+import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.component';
+import {DragDropModule} from 'primeng/dragdrop';
+
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -103,6 +106,7 @@ const APP_CONTAINERS = [
     ChildDuaComponent,
     ChildTigaComponent,
     LookupDataComponent,
+    DragndropComponent,
   ],
   imports: [
     BrowserModule,
@@ -155,6 +159,7 @@ const APP_CONTAINERS = [
     ToolbarModule,
     DynamicDialogModule,
     KeyFilterModule,
+    DragDropModule,
   ],
   exports: [BtnNavComponent],
   providers: [

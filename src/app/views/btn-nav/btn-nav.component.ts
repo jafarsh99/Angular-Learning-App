@@ -39,4 +39,7 @@ export class BtnNavComponent {
     goToKomponen(){
       this.router.navigate(['parent-child']);
     }
+    goToDragNdroP(){
+      this.router.navigate(['dragndrop']);
+    }
 }
