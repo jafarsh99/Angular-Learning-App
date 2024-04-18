@@ -13,6 +13,7 @@ import { DarkmodeComponent } from './views/darkmode/darkmode.component';
 import { InputCustomComponent } from './views/input-custom/input-custom.component';
 import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
 import { ParentComponent } from './views/learn-komponen/parent/parent.component';
+import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,13 @@ const routes: Routes = [
         component: ParentComponent,
         data: {
           title: 'Parent',
+        },
+      },
+      {
+        path: 'dragndrop',
+        component: DragndropComponent,
+        data: {
+          title: 'DragNdroP',
         },
       },
       {
