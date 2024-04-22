@@ -82,6 +82,7 @@ import { LookupDataComponent } from './views/learn-komponen/lookup/lookup-data/l
 import {KeyFilterModule} from 'primeng/keyfilter';
 import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.component';
 import {DragDropModule} from 'primeng/dragdrop';
+import { ProsesDataComponent } from './views/dragndrop/proses-data/proses-data.component';
 
 
 const APP_CONTAINERS = [
@@ -107,6 +108,7 @@ const APP_CONTAINERS = [
     ChildTigaComponent,
     LookupDataComponent,
     DragndropComponent,
+    ProsesDataComponent,
   ],
   imports: [
     BrowserModule,

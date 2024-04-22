@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Product } from '../data.interface';
 import { PrimeNGConfig } from 'primeng/api';
 import { DummyProduct } from '../data-dummy';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ProsesDataComponent } from '../proses-data/proses-data.component';
 
 
 @Component({
@@ -17,7 +19,9 @@ export class DragndropComponent {
     
   draggedProduct: Product | null = null;
   
-  constructor() { 
+  constructor(
+    private dialogService: DialogService,
+  ) { 
       this.sortProducts();
   }
 
@@ -43,7 +47,11 @@ export class DragndropComponent {
           this.availableProducts = this.availableProducts.filter((val, i) => i !== draggedProductIndex);
           this.sortProducts(); // Sort after modifying the list
           this.draggedProduct = null;
+          console.log('EXISTING PRODUCT ', existingProduct);
       }
+      console.log('DRAGGED PRODUCT ', this.draggedProduct);
+      console.log('SELECTED PRODUCT ', this.selectedProducts);
+      
   }
 
   dragEnd(event: any) {
@@ -55,17 +63,21 @@ export class DragndropComponent {
   }
 
   removeProduct(product: Product) {
-      product.quantity = product.quantity! - 1;
-      if (product.quantity === 0) {
-          this.availableProducts = [...this.availableProducts, product];
-          this.selectedProducts = this.selectedProducts.filter(p => p.id !== product.id);
-      }
+    product.quantity = product.quantity! - 1;
+    if (product.quantity! > 0) {
+        product.totalPrice = product.price * product.quantity;
+    } else {
+        // Remove the product entirely if the quantity reaches zero
+        this.selectedProducts = this.selectedProducts.filter(p => p.id !== product.id);
+    }
       this.sortProducts(); // Sort after modifying the list
   }
 
   incrementQuantity(product: Product) {
-      product.quantity!++;
-  }
+    product.quantity!++;
+    product.totalPrice = product.price * product.quantity;  // Update total price
+    this.logTotalPrice(product);  // Optional: Log the total price to console
+}
 
   getProductTotalPrice(product: Product): number {
       return product.price * (product.quantity || 0);
@@ -78,4 +90,32 @@ export class DragndropComponent {
   getTotalPrice(): number {
       return this.selectedProducts.reduce((acc, product) => acc + this.getProductTotalPrice(product), 0);
   }
+
+  logTotalPrice(product: Product) {
+    let totalPrice = product.price * (product.quantity || 0);
+    console.log(`Total harga untuk ${product.name}: $${totalPrice}`);
+  }
+
+  openLookup() {
+    const ref = this.dialogService.open(ProsesDataComponent, {
+      header: 'Lookup Data',
+      width: '70%',
+      data: { selectedRows: this.selectedProducts },
+    });
+
+    // Callback yang dipanggil setelah dialog ditutup
+    ref.onClose.subscribe((selectedRows: Product[]) => {
+      if (selectedRows) {
+        // Lakukan sesuatu dengan data yang dipilih setelah dialog ditutup
+        console.log(selectedRows);
+      }
+    });
+  }
+
+  cancelSelection() {
+    // Mengembalikan produk terpilih ke daftar produk yang tersedia
+    this.availableProducts = [...this.availableProducts, ...this.selectedProducts];
+    this.sortProducts();  // Jika ada kebutuhan untuk menyortir ulang daftar produk
+    this.selectedProducts = [];  // Mengosongkan daftar produk terpilih
+}
 }

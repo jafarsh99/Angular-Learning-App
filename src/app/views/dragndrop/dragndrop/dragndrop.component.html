@@ -1,6 +1,6 @@
-Drag and Drop to Table
 <div class="grid w-full" style="display: flex;">
     <div class="col-6 md:col-6 drag-column">
+        <div class="custom-div"><h4>PRODUCT LIST</h4></div>
         <div *ngFor="let product of availableProducts">
             <div class="product-item" pDraggable="products" (onDragStart)="dragStart($event, product)"
                 (onDragEnd)="dragEnd($event)" style="background: white;">
@@ -21,6 +21,7 @@ Drag and Drop to Table
         </div>
     </div>
     <div class="col-6 md:col-6 drop-column" pDroppable="products" (onDrop)="drop($event)">
+        <div class="custom-div-2"><h4>SELECTED PRODUCT</h4></div>
         <p-table [value]="selectedProducts">
             <ng-template pTemplate="header">
                 <tr style="text-align-last: center ;">
@@ -60,5 +61,9 @@ Drag and Drop to Table
                 </tr>
             </ng-template>
         </p-table>
+        <div class="pt-3" style="text-align: right;">
+            <button pButton (click)="cancelSelection()" class="p-button-danger">Batal</button> &nbsp;
+            <button pButton (click)="openLookup()">Proses</button>
+        </div>
     </div>
 </div>

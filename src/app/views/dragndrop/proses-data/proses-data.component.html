@@ -1,0 +1,50 @@
+<div class="lookup-container">
+    <p-table
+      [value]="selectedRows"
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [rowsPerPageOptions]="[5, 10, 25, 50, 100]"
+      selectionMode="single"
+      [(selection)]="selectedRow"
+    >
+      <ng-template pTemplate="header">
+        <tr style="text-align-last: center ;">
+            <th>Name</th>
+            <th>Category</th>
+            <th>quantity</th>
+            <th>Price</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr [pSelectableRow]="rowData" style="text-align-last: center ;">
+          <td>{{ rowData.name }}</td>
+          <td>{{ rowData.category }}</td>
+          <td>{{ rowData.quantity }}</td>
+          <!-- <td>${{ rowData.price }}</td> -->
+          <td>${{ rowData.totalPrice ? rowData.totalPrice : rowData.price}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="footer" let-product>
+        <tr>
+            <td colspan="2">Total Items :</td>
+            <td style="text-align: center;">{{getTotalItems()}}</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">Total Price : </td>
+            <td style="text-align: center;">${{getTotalPrice()}}</td>
+        </tr>
+    </ng-template>
+    </p-table>
+    <div style="text-align: right;">
+      <button
+        pButton
+        type="button"
+        label="Close"
+        (click)="closeDialog()"
+      ></button>
+    </div>
+  </div>
+  
