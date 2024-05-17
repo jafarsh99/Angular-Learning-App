@@ -14,6 +14,7 @@ import { InputCustomComponent } from './views/input-custom/input-custom.componen
 import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
 import { ParentComponent } from './views/learn-komponen/parent/parent.component';
 import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.component';
+import { RegexComponent } from './views/regex/regex.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,13 @@ const routes: Routes = [
         component: DragndropComponent,
         data: {
           title: 'DragNdroP',
+        },
+      },
+      {
+        path: 'regex',
+        component: RegexComponent,
+        data: {
+          title: 'Regex',
         },
       },
       {

@@ -1,0 +1,8 @@
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th  {
+    font-size: 12px !important;
+    font-weight: 500px !important;
+    text-wrap: balance !important;
+}
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td  {
+    font-size: 12px !important;
+}

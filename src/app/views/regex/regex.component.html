@@ -1,0 +1,58 @@
+<p-panel [header]="title" [toggleable]="false">
+    <div class="p-grid">
+        <p>REGEX untuk bisa membaca data .csv yang akan dimapping ke tabel grid</p>
+      <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
+        <p-table [columns]="cols" [value]="dataLists" [paginator]="true" [rows]="10"
+          [rowsPerPageOptions]="[10, 20, 30, 50, 100]" [totalRecords]="totalRowCount" [loading]="loadingTable"
+          [resizableColumns]="true" columnResizeMode="expand" [lazy]="true"
+          (onLazyLoad)="onLazyLoad($event)">
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th *ngFor="let col of columns" [ngStyle]="{ 'width': col.width, 'text-align': col.align }"
+                pResizableColumn>
+                {{col.header}}
+              </th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+              <td *ngFor="let col of cols" [ngStyle]="{ 'width': col.width, 'text-align': col.align }" pResizableColumn>
+                <ng-container [ngSwitch]="col.format">
+                  <ng-container *ngSwitchCase="'currency'">
+                    <div *ngIf="rowData[col.field] === null; else currIDR">
+                      {{ rowData[col.field] }}
+                    </div>
+                    <ng-template #currIDR>
+                      {{ rowData[col.field] | currency : 'IDR' : '' }}
+                    </ng-template>
+                  </ng-container>
+                  <ng-container *ngSwitchDefault>{{ rowData[col.field] }}</ng-container>
+                </ng-container>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td [attr.colspan]="cols.length">Data Kosong</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="summary">
+            <div class="p-grid">
+              <div class="ui-g-12 ui-md-6">
+                <p-fileUpload #fileInput mode="advanced" name="myfile[]" [customUpload]="true" accept=".csv"
+                  [disabled]="disableChooseFile" (uploadHandler)="incomingfile($event, fileInput)" class="custom-upload"
+                  [style]="{ 'text-align': 'left' }">
+                </p-fileUpload>
+              </div>
+              <!-- <div class="ui-g-2 ui-md-6" style="text-align: right;">
+                <button pButton type="button" label="Validasi" icon="fa fa-fw fa-check" class="ui-button-success"
+                  [disabled]="disableValidasi" (click)="validasi()"></button>&nbsp;
+                <button pButton type="button" label="Batal" icon="pi pi-times" class="btn button-info"
+                  (click)="batal()" [disabled]="disableBatal"></button>
+              </div> -->
+            </div>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-panel>

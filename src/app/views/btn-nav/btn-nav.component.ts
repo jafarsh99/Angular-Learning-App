@@ -42,4 +42,7 @@ export class BtnNavComponent {
     goToDragNdroP(){
       this.router.navigate(['dragndrop']);
     }
+    goToRegex(){
+      this.router.navigate(['regex']);
+    }
 }

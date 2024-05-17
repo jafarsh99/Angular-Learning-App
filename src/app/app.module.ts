@@ -52,7 +52,7 @@ import { BtnNavComponent } from './views/btn-nav/btn-nav.component';
 import { AccordionModule } from 'primeng/accordion';
 import { ButtonModule } from 'primeng/button';
 import { AccordionComponent } from './views/accordion/accordion.component';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -83,6 +83,7 @@ import {KeyFilterModule} from 'primeng/keyfilter';
 import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.component';
 import {DragDropModule} from 'primeng/dragdrop';
 import { ProsesDataComponent } from './views/dragndrop/proses-data/proses-data.component';
+import { RegexComponent } from './views/regex/regex.component';
 
 
 const APP_CONTAINERS = [
@@ -109,6 +110,7 @@ const APP_CONTAINERS = [
     LookupDataComponent,
     DragndropComponent,
     ProsesDataComponent,
+    RegexComponent,
   ],
   imports: [
     BrowserModule,
@@ -173,6 +175,7 @@ const APP_CONTAINERS = [
     Title,
     ConfirmationService,
     DialogService,
+    MessageService,
   ], 
   bootstrap: [AppComponent],
 })
