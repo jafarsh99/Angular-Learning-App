@@ -84,6 +84,8 @@ import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.compon
 import {DragDropModule} from 'primeng/dragdrop';
 import { ProsesDataComponent } from './views/dragndrop/proses-data/proses-data.component';
 import { RegexComponent } from './views/regex/regex.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ServicesService } from './views/services.service'
 
 
 const APP_CONTAINERS = [
@@ -164,6 +166,7 @@ const APP_CONTAINERS = [
     DynamicDialogModule,
     KeyFilterModule,
     DragDropModule,
+    HttpClientModule,
   ],
   exports: [BtnNavComponent],
   providers: [
@@ -176,6 +179,7 @@ const APP_CONTAINERS = [
     ConfirmationService,
     DialogService,
     MessageService,
+    ServicesService,
   ], 
   bootstrap: [AppComponent],
 })

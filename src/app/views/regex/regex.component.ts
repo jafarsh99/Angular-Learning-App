@@ -3,6 +3,7 @@ import { PagingInfo } from '../models/paging-info.model';
 import { uploadADKWrapper } from '../models/asset-upload-adk-wrapper';
 import { ConfirmationService, MessageService, SelectItem } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ServicesService } from '../services.service';
 
 
 @Component({
@@ -73,6 +74,7 @@ export class RegexComponent {
     public confirmationService: ConfirmationService,
     public router: Router,
     public messageService: MessageService,
+    private downloadService: ServicesService,
   ) {
   }
 
@@ -293,5 +295,13 @@ export class RegexComponent {
     }, 0);
   }
 
+  download() {
+    const fileUrl = 'assets/files/testUploadADK.csv';
+    const fileName = 'upload-adk.csv';
+
+    this.downloadService.downloadFile(fileUrl).subscribe(blob => {
+      this.downloadService.saveFile(blob, fileName);
+    });
+  }
 
 }

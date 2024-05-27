@@ -1,6 +1,7 @@
 <p-panel [header]="title" [toggleable]="false">
     <div class="p-grid">
         <p>REGEX untuk bisa membaca data .csv yang akan dimapping ke tabel grid</p>
+        <p><button pButton (click)="download()">Download Contoh File CSV</button></p>
       <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
         <p-table [columns]="cols" [value]="dataLists" [paginator]="true" [rows]="10"
           [rowsPerPageOptions]="[10, 20, 30, 50, 100]" [totalRecords]="totalRowCount" [loading]="loadingTable"
