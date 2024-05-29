@@ -11,7 +11,8 @@ import { SelectedCSVdataComponent } from '../lookup/selected-csvdata/selected-cs
 @Component({
   selector: 'app-regex',
   templateUrl: './regex.component.html',
-  styleUrls: ['./regex.component.scss']
+  styleUrls: ['./regex.component.scss'],
+  providers: [MessageService]
 })
 export class RegexComponent {
   title = 'REGEXXXXXXX';
@@ -357,18 +358,19 @@ export class RegexComponent {
   }
 
   cekData() {
-    const ref = this.dialogService.open(SelectedCSVdataComponent, {
-      header: 'Lookup Data',
-      width: '100%',
-      data: { selectedRows: this.selectedRows },
-    });
+    if (this.selectedRows.length === 0) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Info',
+        detail: `Tidak ada data yang dipilih!`
+      });
+    } else {
+      const ref = this.dialogService.open(SelectedCSVdataComponent, {
+        header: 'Lookup Data',
+        width: '100%',
+        data: { selectedRows: this.selectedRows },
+      });
 
-    // Callback yang dipanggil setelah dialog ditutup
-    // ref.onClose.subscribe((selectedRows: Data[]) => {
-    //   if (selectedRows) {
-    //     // Lakukan sesuatu dengan data yang dipilih setelah dialog ditutup
-    //     console.log(selectedRows);
-    //   }
-    // });
+    }
   }
 }

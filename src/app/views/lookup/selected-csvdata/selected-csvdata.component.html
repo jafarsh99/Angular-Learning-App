@@ -1,41 +1,39 @@
-<p-panel [toggleable]="false">
-    <div class="grid">
-        <p-table [columns]="cols" [value]="selectedRows" [paginator]="true" [rows]="10"
-            [rowsPerPageOptions]="[10, 20, 30, 50, 100]" [totalRecords]="totalRowCount" [loading]="loadingTable"
-            [resizableColumns]="true" columnResizeMode="expand" [lazy]="true">
-            <ng-template pTemplate="header" let-columns>
+<div class="grid">
+    <p-table [columns]="cols" [value]="selectedRows" [paginator]="true" [rows]="10"
+         [rowsPerPageOptions]="[10, 20, 30, 50, 100]" [totalRecords]="totalRowCount" [loading]="loadingTable"
+         [resizableColumns]="true" columnResizeMode="expand" [lazy]="true" (onLazyLoad)="loadLazy($event)">
+        <ng-template pTemplate="header" let-columns>
             <tr>
                 <th *ngFor="let col of columns" [ngStyle]="{ 'width': col.width, 'text-align': col.align }"
                     pResizableColumn>
                     {{col.header}}
                 </th>
             </tr>
-            </ng-template>
-            <ng-template pTemplate="body" let-rowData let-columns="columns">
-                <tr>
-                    <td *ngFor="let col of cols" [ngStyle]="{ 'width': col.width, 'text-align': col.align }"
-                        pResizableColumn>
-                        <ng-container [ngSwitch]="col.format">
-                            <ng-container *ngSwitchCase="'currency'">
-                                <div *ngIf="rowData[col.field] === null; else currIDR">
-                                    {{ rowData[col.field] }}
-                                </div>
-                                <ng-template #currIDR>
-                                    {{ rowData[col.field] | currency : 'IDR' : '' }}
-                                </ng-template>
-                            </ng-container>
-                            <ng-container *ngSwitchDefault>{{ rowData[col.field] }}</ng-container>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of cols" [ngStyle]="{ 'width': col.width, 'text-align': col.align }"
+                    pResizableColumn>
+                    <ng-container [ngSwitch]="col.format">
+                        <ng-container *ngSwitchCase="'currency'">
+                            <div *ngIf="rowData[col.field] === null; else currIDR">
+                                {{ rowData[col.field] }}
+                            </div>
+                            <ng-template #currIDR>
+                                {{ rowData[col.field] | currency : 'IDR' : '' }}
+                            </ng-template>
                         </ng-container>
-                    </td>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="emptymessage">
-                <tr>
-                    <td [attr.colspan]="cols.length">Data Kosong</td>
-                </tr>
-            </ng-template>
-            <ng-template pTemplate="summary">
-            </ng-template>
-        </p-table>
-    </div>
-</p-panel>
+                        <ng-container *ngSwitchDefault>{{ rowData[col.field] }}</ng-container>
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td [attr.colspan]="cols.length">Data Kosong</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+        </ng-template>
+    </p-table>
+</div>

@@ -35,28 +35,39 @@ export class SelectedCSVdataComponent {
     { field: 'kuantitasLuasSemula', header: 'Kuantitas (Luas) Semula', align: 'center', format: 'currency' },
     { field: 'kuantitasLuasMenjadi', header: 'Kuantitas (Luas) Menjadi', align: 'center', format: 'currency' },
     { field: 'selisihLuas', header: 'Selisih Luas', align: 'center', format: 'currency', width: '40px' },
-    { field: 'keterangan', header: 'Keterangan', align: 'center' , width: '100px' },
+    { field: 'keterangan', header: 'Keterangan', align: 'center', width: '100px' },
   ];
 
   constructor(
-    public ref: DynamicDialogRef, 
+    public ref: DynamicDialogRef,
     public config: DynamicDialogConfig,
     private messageService: MessageService,
 
-    ) {}
+  ) { }
 
   ngOnInit() {
-    // Mendapatkan data yang dikirim dari komponen utama
-    console.log('CONFIG DATA ', this.config.data.selectedRows);
-    
-    if (this.config.data.selectedRows){
-    this.selectedRows = this.config.data.selectedRows;
-    } else {
-    this.selectedRows = this.data;
-    console.log('DATA ', this.data);
-    
-   }
-    // ... Lakukan sesuatu dengan data yang telah dichecked sebelumnya
+    try {
+      if (this.config.data && this.config.data.selectedRows) {
+        this.selectedRows = this.config.data.selectedRows;
+        this.totalRowCount = this.selectedRows.length;
+      } else {
+        this.selectedRows = [];
+        this.totalRowCount = 0;
+      }
+    } catch (error) {
+      console.error('Error initializing the component:', error);
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Failed to initialize data.' });
+    }
   }
 
+  loadLazy(event: any) {
+    // Implementasi paginasi sederhana
+    this.loadingTable = true;
+    setTimeout(() => {
+      const startIndex = event.first;
+      const endIndex = startIndex + event.rows;
+      this.selectedRows = this.config.data.selectedRows.slice(startIndex, endIndex);
+      this.loadingTable = false;
+    }, 500); // Simulasikan delay load data
+  }
 }

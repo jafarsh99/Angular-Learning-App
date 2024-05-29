@@ -87,6 +87,7 @@ import { RegexComponent } from './views/regex/regex.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesService } from './views/services.service';
 import { SelectedCSVdataComponent } from './views/lookup/selected-csvdata/selected-csvdata.component'
+import {ImageModule} from 'primeng/image';
 
 
 const APP_CONTAINERS = [
@@ -169,6 +170,7 @@ const APP_CONTAINERS = [
     KeyFilterModule,
     DragDropModule,
     HttpClientModule,
+    ImageModule
   ],
   exports: [BtnNavComponent],
   providers: [
