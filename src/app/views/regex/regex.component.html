@@ -1,17 +1,24 @@
 <p-panel [header]="title" [toggleable]="false">
-    <div class="p-grid">
-        <p>REGEX untuk bisa membaca data .csv yang akan dimapping ke tabel grid</p>
-        <p><button pButton (click)="download()">Download Contoh File CSV</button></p>
-      <div class="p-col-12 p-sm-12 p-md-12 p-lg-12">
+    <div class="grid">
+        <p>Contoh REGEX untuk bisa membaca data .csv yang akan dimapping ke tabel grid</p>
+        <p style="text-align-last : justify"><button pButton (click)="download()">Download Contoh File CSV</button>&nbsp; <button pButton (click)="checkbox()" [ngClass]="{'p-button-success': !checkboxMode, 'p-button-warning': checkboxMode}">{{btnCheckBox}}</button></p>
+      <div class="col-12 sm:col-12 md:col-12 lg:col-12">
         <p-table [columns]="cols" [value]="dataLists" [paginator]="true" [rows]="10"
           [rowsPerPageOptions]="[10, 20, 30, 50, 100]" [totalRecords]="totalRowCount" [loading]="loadingTable"
           [resizableColumns]="true" columnResizeMode="expand" [lazy]="true"
+          [(selection)]="selectedRows"
+          (onRowSelect)="onRowSelect($event)"
+          (onRowUnselect)="onRowUnselect($event)"
+          (onHeaderCheckboxToggle)="onHeaderCheckboxToggle($event)"
           (onLazyLoad)="onLazyLoad($event)">
           <ng-template pTemplate="header" let-columns>
             <tr>
               <th *ngFor="let col of columns" [ngStyle]="{ 'width': col.width, 'text-align': col.align }"
                 pResizableColumn>
                 {{col.header}}
+              </th>
+              <th class="hcheckbox" *ngIf="checkboxMode">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
               </th>
             </tr>
           </ng-template>
@@ -30,6 +37,9 @@
                   <ng-container *ngSwitchDefault>{{ rowData[col.field] }}</ng-container>
                 </ng-container>
               </td>
+              <td *ngIf="checkboxMode">
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+              </td>
             </tr>
           </ng-template>
           <ng-template pTemplate="emptymessage">
@@ -38,19 +48,17 @@
             </tr>
           </ng-template>
           <ng-template pTemplate="summary">
-            <div class="p-grid">
-              <div class="ui-g-12 ui-md-6">
+            <div class="grid w-full" style="display: flex;">
+              <div class="col-6 md:col-6 lg:col-6">
                 <p-fileUpload #fileInput mode="advanced" name="myfile[]" [customUpload]="true" accept=".csv"
                   [disabled]="disableChooseFile" (uploadHandler)="incomingfile($event, fileInput)" class="custom-upload"
                   [style]="{ 'text-align': 'left' }">
                 </p-fileUpload>
               </div>
-              <!-- <div class="ui-g-2 ui-md-6" style="text-align: right;">
-                <button pButton type="button" label="Validasi" icon="fa fa-fw fa-check" class="ui-button-success"
-                  [disabled]="disableValidasi" (click)="validasi()"></button>&nbsp;
-                <button pButton type="button" label="Batal" icon="pi pi-times" class="btn button-info"
-                  (click)="batal()" [disabled]="disableBatal"></button>
-              </div> -->
+              <div class="col-6 md:col-6 lg:col-6" style="text-align: right;">
+                <button pButton type="button" label="Cek Data" icon="fa fa-fw fa-check" class="ui-button-success"
+                  [disabled]="disableCekData" (click)="cekData()"></button>&nbsp;
+              </div>
             </div>
           </ng-template>
         </p-table>

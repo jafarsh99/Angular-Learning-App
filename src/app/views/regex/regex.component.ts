@@ -4,6 +4,8 @@ import { uploadADKWrapper } from '../models/asset-upload-adk-wrapper';
 import { ConfirmationService, MessageService, SelectItem } from 'primeng/api';
 import { Router } from '@angular/router';
 import { ServicesService } from '../services.service';
+import { DialogService } from 'primeng/dynamicdialog';
+import { SelectedCSVdataComponent } from '../lookup/selected-csvdata/selected-csvdata.component';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./regex.component.scss']
 })
 export class RegexComponent {
-  title = 'Upload ADK Data Koreksi BPK';
+  title = 'REGEXXXXXXX';
 
   //parameter untuk baca excel
   arrayBuffer: any;
@@ -23,6 +25,7 @@ export class RegexComponent {
   totalErrorValidasi!: string;
   file_name!: string;
   file_target: any;
+  selectedRows: any[] = [];
 
   allDataLists = [] as uploadADKWrapper[];
   dataCSV = [] as uploadADKWrapper[];
@@ -62,10 +65,13 @@ export class RegexComponent {
   disableValidasi: boolean = true;
   disableProses: boolean = true;
   disableDownload: boolean = true;
+  disableCekData : boolean = true;
 
   uploadedFiles: any[] = [];
   csvRecords: any[] = [];
   sysdate = new Date;
+  btnCheckBox = 'Activated Checkbox Mode';
+  checkboxMode = false;
 
   
   constructor(
@@ -75,6 +81,7 @@ export class RegexComponent {
     public router: Router,
     public messageService: MessageService,
     private downloadService: ServicesService,
+    private dialogService: DialogService,
   ) {
   }
 
@@ -304,4 +311,64 @@ export class RegexComponent {
     });
   }
 
+  isSelected(data: any): boolean {
+    return this.selectedRows.some((row) => row.id === data.id);
+  }
+
+  onRowSelect(event: any) {
+    if (!this.isSelected(event.data)) {
+      this.selectedRows.push(event.data);
+    }
+    console.log('Row selected:', event.data);
+    console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
+  }
+
+  onRowUnselect(event: any) {
+    const index = this.selectedRows.findIndex(row => row.no === event.data.no);
+  if (index !== -1) {
+    this.selectedRows.splice(index, 1); // Hapus baris dari array
+  }
+    // console.log('Row unselected:', event.data);
+    console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
+  }
+
+  onHeaderCheckboxToggle(event: any) {
+    if (event.checked) {
+      this.selectedRows = this.dataCSV.slice();
+    } else {
+      this.selectedRows = [];
+    }
+    console.log('Header checkbox toggled:', event.checked);
+    console.log('DATA DIPILIH: ' + JSON.stringify(this.selectedRows));
+  }
+
+  checkbox() {
+     if (this.checkboxMode){
+      this.checkboxMode = false;
+      this.disableCekData = true;
+      this.btnCheckBox = 'Activated Checkbox Mode'
+      return;
+    } else {
+      this.checkboxMode = true;
+      this.disableCekData = false;
+      this.btnCheckBox = 'Unactivated Checkbox Mode'
+      return;
+    }
+  }
+
+  cekData() {
+    const ref = this.dialogService.open(SelectedCSVdataComponent, {
+      header: 'Lookup Data',
+      width: '100%',
+      data: { selectedRows: this.selectedRows },
+    });
+
+    // Callback yang dipanggil setelah dialog ditutup
+    // ref.onClose.subscribe((selectedRows: Data[]) => {
+    //   if (selectedRows) {
+    //     // Lakukan sesuatu dengan data yang dipilih setelah dialog ditutup
+    //     console.log(selectedRows);
+    //   }
+    // });
+  }
 }

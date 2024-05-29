@@ -85,7 +85,8 @@ import {DragDropModule} from 'primeng/dragdrop';
 import { ProsesDataComponent } from './views/dragndrop/proses-data/proses-data.component';
 import { RegexComponent } from './views/regex/regex.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ServicesService } from './views/services.service'
+import { ServicesService } from './views/services.service';
+import { SelectedCSVdataComponent } from './views/lookup/selected-csvdata/selected-csvdata.component'
 
 
 const APP_CONTAINERS = [
@@ -113,6 +114,7 @@ const APP_CONTAINERS = [
     DragndropComponent,
     ProsesDataComponent,
     RegexComponent,
+    SelectedCSVdataComponent,
   ],
   imports: [
     BrowserModule,
