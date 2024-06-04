@@ -20,6 +20,7 @@ export class ChildTigaComponent {
   data: Data[] = DummyData;
   selectedRows: Data[] = [];
   loading = false;
+  selectedData : any;
 
   cols = [
     { header: 'ID', field: 'id' },
@@ -59,20 +60,46 @@ export class ChildTigaComponent {
 
   sendDataToChild2() {
     const dataToSend = 'Data dari child 3';
-    this.sharedService.setResumeData('DATA_FROM_CHILD_3', dataToSend);
-
-    console.log('CEK ', dataToSend);
+    if(this.selectedData) {
+    let rowData = this.selectedData;
+    this.sharedService.setResumeData('DATA_FROM_CHILD_3', rowData.name);
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Informasi',
+        detail: `Data belum dipilih!`
+      });
+    }
+    // console.log('CEK ', dataToSend);
+    
+  }
+  sendDataToChild1() {
+    const dataToSend = 'Data dari child 3';
+    if(this.selectedData) {
+    let rowData = this.selectedData;
+    this.sharedService.setResumeData('DATA_KE_CHILD_1', rowData.name);
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Informasi',
+        detail: `Data belum dipilih!`
+      });
+    }
+    // console.log('CEK ', dataToSend);
     
   }
 
   onRowSelect(event: any) {
     console.log('Row selected:', event.data);
     this.dataSelected.emit([event.data]);
+    this.selectedData = event.data;
   }
 
   onRowUnselect(event: any) {
     console.log('Row unselected:', event.data);
     this.dataSelected.emit([]);
+    this.selectedData = '';
+
   }
 
   
