@@ -15,6 +15,8 @@ import { UploadimgComponent } from './views/uploadimg/uploadimg.component';
 import { ParentComponent } from './views/learn-komponen/parent/parent.component';
 import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.component';
 import { RegexComponent } from './views/regex/regex.component';
+import { LocalStorageComponent } from './views/local-storage/local-storage.component';
+import { DisplayStorageComponent } from './views/local-storage/display-storage/display-storage.component';
 
 const routes: Routes = [
   {
@@ -83,6 +85,20 @@ const routes: Routes = [
         component: RegexComponent,
         data: {
           title: 'Regex',
+        },
+      },
+      {
+        path: 'localStorage',
+        component: LocalStorageComponent,
+        data: {
+          title: 'localStorage',
+        },
+      },
+      {
+        path: 'displayStorage',
+        component: DisplayStorageComponent,
+        data: {
+          title: 'displayStorage',
         },
       },
       {

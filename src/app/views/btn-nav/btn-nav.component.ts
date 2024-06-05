@@ -45,4 +45,7 @@ export class BtnNavComponent {
     goToRegex(){
       this.router.navigate(['regex']);
     }
+    goToLocalStorage(){
+      this.router.navigate(['localStorage']);
+    }
 }

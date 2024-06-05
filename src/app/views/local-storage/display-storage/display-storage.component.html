@@ -1,0 +1,11 @@
+<p-panel [header]="title" [toggleable]="false">
+    <div>
+        <h4>Stored Data</h4>
+        <p>Name: <b>{{ userData?.name }}</b></p>
+        <p>Alamat: <b>{{ userData?.address }}</b></p>
+        <p>Es pisang ijo?: <b>{{ userData?.food }}</b></p>
+    </div>
+    <div>
+        <button pButton (click)="onClick()">Kembali</button>
+    </div>
+</p-panel>

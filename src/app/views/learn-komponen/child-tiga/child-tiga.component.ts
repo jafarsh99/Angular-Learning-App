@@ -64,6 +64,8 @@ export class ChildTigaComponent {
     let rowData = this.selectedData;
     this.sharedService.setResumeData('DATA_FROM_CHILD_3', rowData.name);
     } else {
+      let rowData = this.selectedData;
+      this.sharedService.setResumeData('DATA_FROM_CHILD_3', rowData.name);
       this.messageService.add({
         severity: 'error',
         summary: 'Informasi',
@@ -79,6 +81,8 @@ export class ChildTigaComponent {
     let rowData = this.selectedData;
     this.sharedService.setResumeData('DATA_KE_CHILD_1', rowData.name);
     } else {
+      let rowData = this.selectedData;
+      this.sharedService.setResumeData('DATA_KE_CHILD_1', rowData.name);
       this.messageService.add({
         severity: 'error',
         summary: 'Informasi',

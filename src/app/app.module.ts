@@ -88,6 +88,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServicesService } from './views/services.service';
 import { SelectedCSVdataComponent } from './views/lookup/selected-csvdata/selected-csvdata.component'
 import {ImageModule} from 'primeng/image';
+import { LocalStorageComponent } from './views/local-storage/local-storage.component';
+import { DisplayStorageComponent } from './views/local-storage/display-storage/display-storage.component';
 
 
 const APP_CONTAINERS = [
@@ -116,6 +118,8 @@ const APP_CONTAINERS = [
     ProsesDataComponent,
     RegexComponent,
     SelectedCSVdataComponent,
+    LocalStorageComponent,
+    DisplayStorageComponent,
   ],
   imports: [
     BrowserModule,
