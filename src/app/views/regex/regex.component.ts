@@ -139,20 +139,22 @@ export class RegexComponent {
       reader.onload = () => {
         let csvData = reader.result;
         let csvRecordsArray = (<string>csvData).split(/\r\n|\n/);
-      
+        console.log('csvRecordsArray ', csvRecordsArray);
+
         let headersRow = this.getHeaderArray(csvRecordsArray);
+        // console.log("HEADER LENGTH ", headersRow);
         if (headersRow.length === 20) {
           let results = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);
-          this.allDataLists = results || [];  // Menetapkan array kosong sebagai nilai default
-          if (results && results.length > 0) {
+          this.allDataLists = results || [];
+          if (!this.allDataLists) {
+            this.batal();
+            this.loadingTable = false;
+          } else {
             this.populateList(this.allDataLists);
             this.pagingInfo = new PagingInfo();
             this.disableBatal = false;
             this.disableUpload = true;
             this.disableValidasi = false;
-            this.loadingTable = false;
-          } else {
-            this.batal();
             this.loadingTable = false;
           }
         } else {
@@ -185,11 +187,10 @@ export class RegexComponent {
 
     for (let i = 1; i < csvRecordsArray.length; i++) {
       let csvRecord = <string>csvRecordsArray[i];
-      if (csvRecord === "" || csvRecord === ",") {
-        // console.log(`SKIP: Empty or invalid record at index ${i}`);
-        continue; //skip data kosong
-    }
-      console.log('BEFORE: ', csvRecord);
+      if (csvRecord === "" || csvRecord === ";" || csvRecord === ",") {
+        continue;
+      }
+      // console.log('BEFORE: ', csvRecord);
 
       // Menangani pola "", "" menjadi "0"
       let tempRecord = csvRecord.replace(/,\s*""""\s*,/g, ',"0",');
@@ -199,10 +200,10 @@ export class RegexComponent {
           return match.replace(/,/g, '|');
       });
 
-      let csvFile = tempRecord.split(',');
+      let csvFile = tempRecord.split(/[;,]/);
       let cleanedData = csvFile.map(item => {
         // Mengembalikan placeholder | menjadi koma dan menghilangkan tanda kutip ganda
-        item = item.replace(/\|/g, ',').replace(/^""|""$/g, '');
+        item = item.replace(/\|/g, '').replace(/^""|""$/g, '');
         // Menghilangkan titik dari format angka
         item = item.replace(/^\s*(\d{1,3}(?:\.\d{3})+)\s*$/g, (match, number) => number.replace(/\./g, ''));
         // Menghilangkan titik dari angka yang diapit tanda kurung
@@ -241,6 +242,15 @@ export class RegexComponent {
         let variabel: string | number = "";
         let csvRecord: uploadADKWrapper = new uploadADKWrapper();
 
+        if (cleanedData[1].length === 2) {
+          // Tambahkan nol di depan angka
+          cleanedData[1] = '0' + cleanedData[1];
+        }
+        if (cleanedData[2].length === 1) {
+          // Tambahkan nol di depan angka
+          cleanedData[2] = '0' + cleanedData[2];
+        }
+
         csvRecord.no = Number(cleanedData[0]);
         csvRecord.ba = cleanedData[1];
         csvRecord.es1 = cleanedData[2];
@@ -276,7 +286,7 @@ export class RegexComponent {
   }
 
   getHeaderArray(csvRecordsArr: string[]): string[] {
-    let headers = (<string>csvRecordsArr[0]).split(',');
+    let headers = (<string>csvRecordsArr[0]).split(/[;,]/);
     return headers.map(header => header.trim());
   }
 

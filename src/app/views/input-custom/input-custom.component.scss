@@ -2,3 +2,49 @@
     padding: 20px;
 }
 
+// .tooltip-manual{
+//     background-color: red !important;
+// }
+
+.speech {
+    /* (A1) FONT & COLORS */
+    font-size: 14px;
+    color: #fff;
+    background: #a53d38;
+    position: fixed !important;
+    margin: 30px;
+    right: 500px;
+    top: 210px;
+  
+    /* (A2) DIMENSIONS */
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 200px;
+  }
+  
+  /* (B) USE ::AFTER TO CREATE THE "CALLOUT" */
+  .speech::after {
+    display: block; width: 0; content: "";
+    border: 15px solid transparent;
+  }
+   
+  /* (C) "CALLOUT" DIRECTIONS */
+
+  .speech.down::after {
+    border-top-color: #a53d38;
+    border-bottom: 0;
+  }
+  
+  /* (D) POSITION THE CALLOUT */
+  .speech {
+    position: relative;
+    margin: 30px;
+  }
+  .speech::after { position: absolute; }
+
+  .speech.down::after {
+    bottom: -15px; left: calc(50% - 15px);
+    top: 25px;
+  }
+
+  

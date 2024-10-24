@@ -12,7 +12,8 @@
         &nbsp;
         <p-button class="ui-button-primary" label="Prime 14" icon="pi pi-search"></p-button>
         &nbsp;
-        <p-button class="ui-button-text" label="Prime 14" icon="pi pi-search"></p-button>
+        <div class="speech down" *ngIf="tooltip">Klik button ini terlebih dahulu</div>
+        <p-button class="ui-button-text" label="Prime 14" icon="pi pi-search"  (click)="onClickToolTip()"></p-button>
       </div>
       <div style="margin-bottom: 10px">
         <input pInputText type="text" class="p-inputtext-sm" [disabled]="true" /> &nbsp;
@@ -109,6 +110,9 @@
         <p-radioButton name="pizza" value="Onion" [(ngModel)]="ingredient" inputId="ingredient4"
           [disabled]="true"></p-radioButton>&nbsp;
         <label for="ingredient4" class="ml-2">Onion</label>
+      </div>
+      <div style="margin-top: 20px">
+        <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
       </div>
       <div style="margin-top: 20px">
         <p-checkbox name="groupname" value="val1" label="Value 1" [(ngModel)]="selectedValues"></p-checkbox>

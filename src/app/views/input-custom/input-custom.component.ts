@@ -17,6 +17,8 @@ export class InputCustomComponent implements OnInit {
   testModel: string = '';
   ingredient: any;
   msgs1: Message[] = [];
+  tooltip: boolean = true;
+  checked?: boolean;
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -31,7 +33,11 @@ export class InputCustomComponent implements OnInit {
         {severity:'error', summary:'Error', detail:'Message Content'},
         {severity:'custom', summary:'Custom', detail:'Message Content', icon: 'pi-file'}
     ];
-}
+  }
+
+  onClickToolTip () {
+    this.tooltip = !this.tooltip;
+  }
 
   myForm = new FormGroup({
     myInput: new FormControl('', [Validators.pattern(/[\/-]/)])

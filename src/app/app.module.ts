@@ -90,6 +90,8 @@ import { SelectedCSVdataComponent } from './views/lookup/selected-csvdata/select
 import {ImageModule} from 'primeng/image';
 import { LocalStorageComponent } from './views/local-storage/local-storage.component';
 import { DisplayStorageComponent } from './views/local-storage/display-storage/display-storage.component';
+import { TooltipModule } from 'primeng/tooltip';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 
 const APP_CONTAINERS = [
@@ -174,7 +176,9 @@ const APP_CONTAINERS = [
     KeyFilterModule,
     DragDropModule,
     HttpClientModule,
-    ImageModule
+    ImageModule,
+    TooltipModule,
+    InputSwitchModule
   ],
   exports: [BtnNavComponent],
   providers: [
