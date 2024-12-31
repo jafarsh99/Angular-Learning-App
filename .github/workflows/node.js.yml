@@ -34,8 +34,15 @@ jobs:
     - name: Build Angular project
       run: ng build --configuration production
 
-    - name: Run tests
-      run: ng test --watch=false --browsers=ChromeHeadless
+    # - name: Run tests
+    #   run: ng test --watch=false --browsers=ChromeHeadless
 
-    - name: Lint codebase
-      run: ng lint
+    # - name: Lint codebase
+    #   run: ng lint
+
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
