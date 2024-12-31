@@ -29,7 +29,7 @@ jobs:
       run: npm install
 
     - name: Install Angular CLI
-      run: npm install -g @angular/cli
+      run: npm install -g @angular/cli@16.1.0
 
     - name: Build Angular project
       run: ng build --prod
