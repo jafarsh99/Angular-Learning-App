@@ -32,7 +32,7 @@ jobs:
       run: npm install -g @angular/cli@16.1.0
 
     - name: Build Angular project
-      run: ng build --prod
+      run: ng build --configuration production
 
     - name: Run tests
       run: ng test --watch=false --browsers=ChromeHeadless
