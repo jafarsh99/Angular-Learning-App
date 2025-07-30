@@ -48,4 +48,10 @@ export class BtnNavComponent {
     goToLocalStorage(){
       this.router.navigate(['localStorage']);
     }
+    goToLocalStateManagement(){
+      this.router.navigate(['state-management']);
+    }
+    goToHtml2Pdf() {
+      this.router.navigate(['html-2-Pdf']);
+    }
 }

@@ -4,9 +4,10 @@
       <p-accordionTab
         *ngFor="let item of accordionItems; let i = index"
         [header]="item.header"
+        [selected]="selectedAccordionIndex === i"
       >
         <div>
-          <div>
+          <div [ngClass]="{'invalid-radio': invalidIndexes?.includes(i) && !item.selectedOption}">
             <p-radioButton
               [inputId]="'accItem_' + i + '_option1'"
               [name]="'accItemRadio' + i"
@@ -15,7 +16,7 @@
             ></p-radioButton> &nbsp;
             <label for="'accItem_' + i + '_option1'">Option 1</label>
           </div>
-          <div>
+          <div [ngClass]="{'invalid-radio': invalidIndexes?.includes(i) && !item.selectedOption}">
             <p-radioButton
               [inputId]="'accItem_' + i + '_option2'"
               [name]="'accItemRadio' + i"
@@ -32,6 +33,7 @@
             (click)="confirmRemoveItem(i)"
             class="p-button-danger btn-hapus"
           ></button>
+
         </div>
       </p-accordionTab>
     </p-accordion>
@@ -42,6 +44,15 @@
       label="Tambah Item"
       (click)="addAccordionItem()"
       class="p-button-success"
+    ></button>
+
+                  <button
+      pButton
+      type="button"
+      label="Lanjut"
+      (click)="validateAccordion()"
+      class="p-button-primary"
+      style="margin-left: 10px"
     ></button>
   </div>
 </body>

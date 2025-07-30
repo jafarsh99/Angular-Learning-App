@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import {
   HashLocationStrategy,
   LocationStrategy,
@@ -92,6 +92,8 @@ import { LocalStorageComponent } from './views/local-storage/local-storage.compo
 import { DisplayStorageComponent } from './views/local-storage/display-storage/display-storage.component';
 import { TooltipModule } from 'primeng/tooltip';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import { StateManagementExmComponent } from './views/state-management-exm/state-management-exm.component';
+import { Html2pdfComponent } from './views/html2pdf/html2pdf.component';
 
 
 const APP_CONTAINERS = [
@@ -122,6 +124,8 @@ const APP_CONTAINERS = [
     SelectedCSVdataComponent,
     LocalStorageComponent,
     DisplayStorageComponent,
+    StateManagementExmComponent,
+    Html2pdfComponent,
   ],
   imports: [
     BrowserModule,
@@ -193,6 +197,7 @@ const APP_CONTAINERS = [
     MessageService,
     ServicesService,
   ], 
+   schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

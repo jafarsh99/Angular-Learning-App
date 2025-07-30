@@ -17,6 +17,8 @@ import { DragndropComponent } from './views/dragndrop/dragndrop/dragndrop.compon
 import { RegexComponent } from './views/regex/regex.component';
 import { LocalStorageComponent } from './views/local-storage/local-storage.component';
 import { DisplayStorageComponent } from './views/local-storage/display-storage/display-storage.component';
+import { StateManagementExmComponent } from './views/state-management-exm/state-management-exm.component';
+import { Html2pdfComponent } from './views/html2pdf/html2pdf.component';
 
 const routes: Routes = [
   {
@@ -95,10 +97,24 @@ const routes: Routes = [
         },
       },
       {
-        path: 'displayStorage',
+        path: 'state-management',
+        component: StateManagementExmComponent,
+        data: {
+          title: 'State Management',
+        },
+      },
+      {
+        path: 'display-storage',
         component: DisplayStorageComponent,
         data: {
           title: 'displayStorage',
+        },
+      },
+      {
+        path: 'html-2-Pdf',
+        component: Html2pdfComponent,
+        data: {
+          title: 'html2Pdf',
         },
       },
       {

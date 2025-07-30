@@ -1,0 +1,857 @@
+/* Atur ukuran halaman A4 */
+@page {
+    size: A4;
+    margin: 20mm;
+    /* Set margin halaman, bisa disesuaikan */
+}
+
+/* Styling umum untuk dokumen */
+body {
+    font-family: 'Calibri', sans-serif;
+    font-size: 11px;
+    /* Ukuran font standar */
+    line-height: 1.5;
+    margin: 0;
+    /* padding: 20px; */
+    background-color: #fff;
+    color: #000;
+}
+
+.width-210mm {
+    width: 794px !important;
+}
+
+.width-297mm {
+    width: 1115px !important;
+}
+
+.vertikal {
+    width: 794px !important;   /* 210mm = 794px pada 96dpi */
+    height: 1123px !important; /* 297mm = 1123px pada 96dpi */
+    background-color: #f9f9f9 !important;
+}
+
+.vertikal2 {
+    width: 794px !important;   /* 210mm = 794px pada 96dpi */
+    height: 1115px !important; /* 297mm = 1123px pada 96dpi */
+    background-color: #f9f9f9 !important;
+}
+
+.horizontal {
+  width: 1123px !important;
+  height: 794px !important;
+  padding: 15px 30px !important;
+  background-color: #f9f9f9 !important;
+}
+
+.flex-kolom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Heading style */
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Paragraf style */
+p {
+    text-indent: 20px;
+    font-size: 11px;
+    /* Indentasi paragraf */
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    text-align: left;
+    line-height: normal;
+}
+
+table th {
+    font-size: 14px !important;
+}
+table td {
+    font-size: 11px !important;
+}
+
+/* Styling untuk footer (misal nomor halaman) */
+footer {
+    position: fixed;
+    bottom: 10mm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* Styling untuk header */
+header {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+i {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic
+}
+
+.logo-bca-header-body {
+    width: 113px;
+}
+
+/* ============================================== CUSTOM CLASS STYLE */
+
+.fonweight-500 {
+    font-weight: 500 !important;
+}
+
+.fonsi-14px {
+    font-size: 14px !important;
+}
+
+.fonsi-12px {
+    font-size: 12px !important;
+}
+
+.relative-top--5px {
+    position: relative;
+    top: -5px;
+}
+
+.relative-top--7px {
+    position: relative;
+    top: -7px;
+}
+.relative-top--10px {
+    position: relative;
+    top: -10px;
+}
+
+.text-align-center {
+    text-align: center !important;
+}
+
+.mr0px {
+    margin-right: 0px !important;
+}
+
+.border-right-none {
+    border-right: none !important;
+}
+
+.border-left-none {
+    border-left: none !important;
+}
+
+.mt--80px {
+    margin-top: -80px;
+}
+
+.mt--30px {
+    margin-top: -30px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text-indent-0 {
+    text-indent: 0px;
+}
+
+.text-indent-15px {
+    text-indent: 15px;
+}
+
+.text-indent-35px {
+    text-indent: 35px !important;
+}
+
+.blue-font {
+    color: #e31e24;
+}
+
+.blue-background {
+    background-color: #e31e24 !important;
+}
+
+.gray-text {
+    color: #bfbfbf !important;
+}
+
+.gray-background {
+    background-color: #bfbfbf !important;
+}
+
+.times-font {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.pl-20px {
+    padding-left: 20px !important;
+}
+
+.ml--30px {
+    margin-left: -30px;
+}
+
+.ml--40px {
+    margin-left: -40px;
+}
+
+.ml--20px {
+    margin-left: -20px;
+}
+
+.dots {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px dotted black;
+    /* position: relative;
+  top: 50%; */
+}
+
+.sign-box {
+    display: inline-block;
+    padding: 2px;
+    /* Space between the inner border and the element */
+    border: 2px solid black;
+    /* Thicker outer border */
+    border-radius: 20px;
+    /* Optional, for rounded corners */
+    width: 100%;
+    height: 110px;
+}
+
+.sign-box input {
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.justify {
+    text-align-last: justify;
+}
+
+/* ========================================================================================= */
+
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+}
+
+.checkbox-container.section-1 {
+    padding: 10px 0px 10px 145px;
+    justify-content: center;
+}
+
+.checkbox {
+    display: none;
+    /* Menyembunyikan checkbox asli */
+}
+
+.checkbox-group label {
+    display: flex;
+}
+
+.checkbox-group p {
+    text-indent: 0px;
+}
+
+.checkbox.checkbox-group label {
+    font-size: 11px;
+}
+
+/* Styling untuk custom checkbox */
+.custom-checkbox {
+    width: 21px;
+    height: 20px;
+    border: 1px solid #000;
+    background-color: #f9f9f9;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.page-1 header.header-cover-text {
+    margin-top: 200px;
+}
+
+.page-1 header .header-text-1 {
+    font-family: 'Calibri', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #e31e24;
+}
+
+.page-1 header .header-text-2 {
+    font-size: 30px;
+    color: #e31e24;
+}
+
+.page-1 header .header-text-3 {
+    text-align: center;
+    margin-top: 10px;
+    line-height: normal;
+    color: #e31e24;
+    font-size: 11px
+}
+
+/* Menambahkan space di antara halaman */
+.page-break {
+    page-break-before: always;
+}
+.page-1 {
+    padding: 20px;
+    page-break-after: always;
+    /* display: block !important; */
+    visibility: visible !important;
+}
+
+.page-2,
+.page-3,
+.page-6,
+.page-7,
+.page-10,
+.page-11,
+.page-12,
+.page-13,
+.page-14,
+.page-15, 
+.page-16,
+.page-17,
+.page-18 {
+    padding: 20px 55px;
+    /* page-break-after: always; */
+    /* display: block !important; */
+    visibility: visible !important;
+}
+
+/* Styling untuk gambar (opsional) */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.page-1 .header-cover {
+    justify-content: space-between;
+    display: flex;
+}
+
+.page-1 .blue-header-line {
+    border-bottom: 30px solid #e31e24;
+    width: 100%;
+    margin-right: 5px;
+}
+
+.page-1 .logo-bca-header img {
+    width: 200px;
+}
+
+.page-1 .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.page-1 .form-cover {
+    text-align-last: right;
+    align-content: center;
+    line-height: 40px;
+}
+
+.page-1 .form-cover .label {
+    color: #e31e24;
+    font-size: 13px;
+}
+
+.page-1 .cover-footer .half-logo-bca-footer {
+    max-width: 500px;
+    transform: rotate(290deg);
+}
+
+.header-body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.lembar-bank {
+    align-self: end;
+    /* font-weight: bold; */
+}
+
+.lembar-bank p {
+    font-size: 12px;
+}
+
+.sub-header-body {
+    text-align: center;
+    justify-items: center;
+    background-color: #e31e24;
+    color: #ffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    align-content: start !important;
+}
+
+.sub-header-body-2 {
+    text-align: center;
+    justify-items: center;
+    background-color: #bfbfbf;
+    margin-top: 1px;
+    font-weight: 500;
+}
+
+.page-2 .mata-uang {
+    display: flex;
+    align-self: flex-end;
+}
+
+.no-border-table {
+    border: 1px solid #f9f9f9;
+}
+
+.no-border-table th {
+    text-align: center;
+    justify-items: center;
+    background-color: #bfbfbf;
+}
+
+.no-border-table td {
+    align-content: start;
+}
+
+.no-border-table td.table-label {
+    width: 18%;
+}
+
+.no-border-table td.colon {
+    width: 2%;
+}
+
+.no-border-table td.colspan2 {
+    width: 40%;
+}
+
+.no-border-table td.table-data {
+    width: 20%;
+}
+
+.no-border-table td.telepon-data .checkbox-group {
+    margin-top: -5px;
+}
+
+.no-border-table td {
+    padding-top: 10px;
+}
+
+.no-border-table td.table-label-cust {
+    width: 23%;
+}
+
+.no-border-table td.colon {
+    width: 2%;
+}
+
+.no-border-table td.table-data-cust {
+    width: 13%;
+}
+
+.no-border-table td.table-data-cust-label-2 {
+    width: 15%;
+}
+
+.no-border-table td.table-data-last {
+    width: 20%;
+}
+
+.page-6 .no-border-table td,
+.page-7 .no-border-table td {
+    padding-top: 8px !important;
+    padding-bottom: 10px !important;
+}
+
+.no-border-table td .alamat-container {
+    display: flex;
+}
+
+.no-border-table td .alamat-container .alamat-label {
+    width: 40%;
+}
+
+.no-border-table td .alamat-container .alamat-label-rt-rw {
+    width: 75%;
+}
+
+.no-border-table td .alamat-container .alamat-label-kpk {
+    width: 30%;
+}
+
+.page-2 .no-border-table td {
+    padding-top: 25px !important;
+}
+
+/* .page-2 .section-3 {
+    margin-top: 50px;
+} */
+
+.footnote {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footnote-ids p {
+    /* writing-mode: sideways-lr; */
+    transform: rotate(270deg);
+    font-weight: 500;
+    position: absolute;
+
+}
+
+.footnote-paraf {
+    align-content: end;
+    line-height: 40px;
+}
+
+.page-3 .section-1 .no-border-table td.table-label {
+    width: 18%;
+}
+
+.page-3 .section-1 .no-border-table td.colon {
+    width: 2%;
+}
+
+.page-3 .section-1 .no-border-table td.table-data {
+    width: 10%;
+}
+
+.page-3 .section-1 .no-border-table td {
+    padding-top: 20px;
+}
+
+.page-3 .section-3 .no-border-table td.table-label {
+    width: 18%;
+}
+
+.page-3 .section-3 .no-border-table td.colon {
+    width: 2%;
+}
+
+.page-3 .section-3 .no-border-table td.table-data {
+    width: 12%;
+}
+
+.page-3 .section-3 .no-border-table td.table-data-last {
+    width: 10%;
+}
+
+.page-3 .section-3 .no-border-table td p.pelanggan,
+.page-7 .section-3 .no-border-table td p.pelanggan {
+    text-indent: 10px !important;
+}
+
+.page-3 .section-3 .no-border-table td .catatan {
+    text-indent: 0px;
+    font-size: 11px;
+}
+
+/* =================================== HORIZONTAL STYLE */
+.page-4,
+.page-5,
+.page-8,
+.page-9 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transform: rotate(0deg);
+    /* Make sure content is properly oriented */
+    padding: 15px;
+}
+
+.page-4 .header,
+.page-5 .header,
+.page-8 .header,
+.page-9 .header {
+    text-align: center;
+}
+
+.page-4 .checkbox-group,
+.page-5 .checkbox-group,
+.page-8 .checkbox-group,
+.page-9 .checkbox-group {
+    display: flex;
+}
+
+.page-4 .pemegang-saham-individu-table .table-with-border,
+.page-5 .pemegang-saham-individu-table .table-with-border,
+.page-8 .pemegang-saham-individu-table .table-with-border,
+.page-9 .pemegang-saham-individu-table .table-with-border {
+    border: 1px solid #000;
+}
+
+.pemegang-saham-individu-table .table-with-border .tdata .checkbox-group {
+    gap: 30px;
+    /* padding-left: 20px; */
+}
+
+.gap-5px {
+    gap: 5px !important;
+}
+
+.min-width-51 {
+    min-width: 51%;
+}
+
+.pemegang-saham-individu-table .table-with-border .tdata {
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.page-4 .pemegang-saham-individu-table .table-with-border .tdata-label,
+.page-5 .pemegang-saham-individu-table .table-with-border .tdata-label,
+.page-8 .pemegang-saham-individu-table .table-with-border .tdata-label,
+.page-9 .pemegang-saham-individu-table .table-with-border .tdata-label {
+    padding-left: 10px;
+}
+
+.page-5 .pemegang-saham-individu-table .table-with-border .tdata-label {
+    width: 20%;
+}
+
+.page-4 .pemegang-saham-individu-table .table-with-border th,
+.page-5 .pemegang-saham-individu-table .table-with-border th,
+.page-8 .pemegang-saham-individu-table .table-with-border th,
+.page-9 .pemegang-saham-individu-table .table-with-border th {
+    background-color: #b2bfe1;
+    font-weight: 500;
+}
+
+/* .page-4 .pemegang-saham-individu-table .table-with-border tr, */
+.page-4 .pemegang-saham-individu-table .table-with-border th,
+.page-4 .pemegang-saham-individu-table .table-with-border td,
+/* .page-5 .pemegang-saham-individu-table .table-with-border tr, */
+.page-5 .pemegang-saham-individu-table .table-with-border th,
+.page-5 .pemegang-saham-individu-table .table-with-border td,
+/* .page-8 .pemegang-saham-individu-table .table-with-border tr,
+.page-8 .pemegang-saham-individu-table .table-with-border th,
+.page-8 .pemegang-saham-individu-table .table-with-border td,
+.page-9 .pemegang-saham-individu-table .table-with-border tr, */
+.page-9 .pemegang-saham-individu-table .table-with-border th,
+.page-9 .pemegang-saham-individu-table .table-with-border td {
+    border: 0.5px solid #000;
+    padding-top: 0px;
+    padding-bottom: 8px;
+}
+
+.page-8 .pemegang-saham-individu-table .table-with-border th,
+.page-8 .pemegang-saham-individu-table .table-with-border td {
+    border: 0.5px solid #000;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.checkbox-group.block label {
+    display: block;
+}
+
+.page-10 .header-text {
+    margin-top: 15px;
+}
+
+.page-10 .body-text .list .number {
+    /* width: 5%; */
+    align-content: end;
+}
+
+/* .page-10 .body-text .row-4 .text-1,
+.page-10 .body-text .row-5 .text-1,
+.page-10 .body-text .row-6 .text-1,
+.page-10 .body-text .row-11 .text-1 {
+    margin-left: 1%;
+} */
+
+/* .page-10 .body-text .row-7 .text-1,
+.page-10 .body-text .row-9 .text-1 {
+    margin-left: 4.5%;
+} */
+
+
+/* .page-10 .body-text .row-8 .text-1,
+.page-10 .body-text .row-10 .text-1 {
+    margin-left: 25%;
+} */
+
+.page-10 p,
+.page-17 p,
+.page-18 p {
+    color: #000 !important;
+}
+
+.page-10 .body-text .row-17 .text-1,
+.page-10 .body-text .row-18 .text-1,
+.page-10 .body-text .row-19 .text-1 {
+    justify-content: space-between;
+    padding-right: 3%;
+}
+
+.page-10 .section-3 {
+    margin-top: 20%;
+}
+
+
+.page-11 .section-2,
+.page-12 .section-1,
+.page-12 .section-3 {
+    display: flex;
+}
+
+.page-11 table.table-with-border tr,
+.page-11 table.table-with-border th,
+.page-11 table.table-with-border td,
+.page-12 table.table-with-border tr,
+.page-12 table.table-with-border th,
+.page-12 table.table-with-border td,
+.page-16 table.table-with-border tr,
+.page-16 table.table-with-border th,
+.page-16 table.table-with-border td {
+    border: 1px solid #000;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.page-11 table.table-with-border th,
+.page-12 table.table-with-border th {
+    font-size: 12px !important;
+}
+.page-11 table.table-with-border th {
+    padding-bottom: 10px !important;
+}
+
+.page-12 table.table-with-border th,
+.page-12 table.table-with-border td,
+.page-16 table.table-with-border th,
+.page-16 table.table-with-border td {
+    padding-bottom: 10px !important;
+}
+
+.page-11 table.table-with-border td {
+    height: 60px !important;
+}
+
+.page-12 table.table-with-border td {
+    height: 50px;
+}
+
+.page-16 table.table-with-border tr.no-border,
+.page-16 table.table-with-border td.no-border {
+    border: 1px solid #f9f9f9;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+.page-11 table.table-with-border th,
+.page-12 table.table-with-border th {
+    font-weight: 500;
+    background-color: #b2bfe1;
+}
+
+.page-11 table.table-with-border .table-number,
+.page-12 table.table-with-border .table-number {
+    width: 4%;
+    text-align: center;
+}
+
+.page-11 .section-3 .ketentuan-row-2,
+.page-11 .section-3 .ketentuan-row-3 {
+    display: flex;
+}
+
+.page-12 .section-4 .list {
+    margin-left: 6%;
+    margin-bottom: 5px;
+}
+
+.page-12 table {
+    margin-bottom: 10px !important;
+}
+
+.page-13 .section-8 .row-2 label {
+    line-height: 15px;
+}
+
+.page-13 .section-8 .row-2 .custom-checkbox {
+    align-self: center;
+}
+
+.page-16 .section-2 {
+    margin-top: 50%;
+}
+
+.page-16 .section-2 .border {
+    border-bottom: 1px solid #000;
+}
+
+.page-16 table.table-with-border {
+    margin-left: 10%;
+    width: 70%;
+}
+
+.page-16 table.table-with-border td.t-data {
+    height: 100px;
+}
+
+/* .page-4 table.table-with-border td.tdata { */
+    /* height: 30px; */
+/* } */
+
+.page-4 table.table-with-border th.tdata-label {
+    border: 0.5 solid #f9f9f9;
+    background-color: #f9f9f9 !important;
+    font-size: 11px !important;
+    text-align: left !important;
+}
+
+.page-16 table.table-with-border td .kategori .text-1 {
+    margin-left: -11%;
+}
+
+.page-17 .section-3 .sign-box-container p.number {
+    width: 20px;
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.page-17 .section-3 .sign-box-container p.nama {
+    font-size: 14px;
+}
+
+.page-17 .section-4 .catatan {
+    line-height: normal;
+}
+
+.page-17 .section-4 .keterangan p,
+.page-17 .section-4 .disetujui p {
+    font-size: 16px
+}
